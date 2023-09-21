@@ -1,0 +1,9 @@
+**/node_modules
+.DS_Store
+test
+public
+build
+dist
+dist-ssr
+*.local
+node_modules/*

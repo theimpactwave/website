@@ -1,0 +1,8 @@
+yarn.lock
+dist
+test
+coverage
+build
+public
+node_modules
+.env

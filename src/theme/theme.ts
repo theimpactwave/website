@@ -49,6 +49,8 @@ const ModalStyles = ModalHelpers.defineMultiStyleConfig({
 });
 
 const theme = {
+  initialColorMode: "dark",
+  useSystemColorMode: false,
   config: {
     cssVarPrefix: "tiw",
   },
@@ -60,6 +62,7 @@ const theme = {
         bg: "#002121",
         color: "#ffffff",
       },
+      body: "#ffffff",
     }),
   },
   fonts: {

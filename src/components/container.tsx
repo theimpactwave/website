@@ -1,10 +1,17 @@
 import { FC, PropsWithChildren } from "react";
-import { Container as ChakraContainer } from "@chakra-ui/react";
+import {
+  Container as ChakraContainer,
+  ContainerProps as ChakraContainerProps,
+} from "@chakra-ui/react";
 
-const Container: FC<PropsWithChildren> = ({
-  children,
-}: PropsWithChildren): JSX.Element => {
-  return <ChakraContainer maxW={"md"}>{children}</ChakraContainer>;
+export interface ContainerProps extends ChakraContainerProps {}
+const Container = (props: ContainerProps) => {
+  const { children, ...rest } = props;
+  return (
+    <ChakraContainer maxW={920} {...rest}>
+      {children}
+    </ChakraContainer>
+  );
 };
 
 export default Container;

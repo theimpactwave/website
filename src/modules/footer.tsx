@@ -1,6 +1,6 @@
 import ComponentFooter from "@/components/footer";
 const Footer = () => {
-  return <ComponentFooter>Content Footer</ComponentFooter>;
+  return <ComponentFooter />;
 };
 
 export default Footer;

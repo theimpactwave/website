@@ -9,9 +9,7 @@ const DefaultLayout: FC<PropsWithChildren> = ({
   return (
     <>
       <Header />
-      <main id={"main"}>
-        <Container>{children}</Container>
-      </main>
+      <main id={"main"}>{children}</main>
       <Footer />
     </>
   );

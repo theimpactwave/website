@@ -20,7 +20,7 @@ const TeaserCard = (props: TeaserCardProps) => {
             justifyContent={"center"}
             alignItems={"center"}
             width={"100%"}
-            color={"white"}
+            color={"white !important"}
             mb={4}
           >
             <Image src={icon} alt={""} width={50} height={50} />

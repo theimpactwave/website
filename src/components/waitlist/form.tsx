@@ -6,6 +6,7 @@ import {
   FormErrorMessage,
   FormLabel,
   Input,
+  useToast,
 } from "@chakra-ui/react";
 import { Field, Formik } from "formik";
 import jsonp from "jsonp";
@@ -13,20 +14,38 @@ import type { ChangeEvent } from "react";
 import { useState } from "react";
 
 const WaitlistForm = () => {
+  const toast = useToast();
   const [emailValue, setEmailValue] = useState<string>("");
   const [nameValue, setNameValue] = useState<string>("");
-  const [isSubmitting] = useState<boolean>(false);
+  const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
 
   const subscribeUrl =
     "https://theimpactwave.us10.list-manage.com/subscribe/post?u=7d1db415cd5323a6d28ae2a83&amp;id=13081383c7&amp;f_id=002ecde5f0";
   const onSubmitHandler = async (values: any) => {
+    setIsSubmitting(true);
     jsonp(
       `${subscribeUrl}&EMAIL=${values.waitlist_email}&UNAME=${values.waitlist_name}`,
-      { param: "c" },
-      (_, data: any) => {
-        const { msg, result } = data;
-        console.log(msg);
-        console.log(result);
+      { param: "c", timeout: 10000 },
+      (err) => {
+        setIsSubmitting(false);
+        if (err instanceof Error) {
+          toast({
+            title: "Sorry that did not work",
+            status: "error",
+            duration: 7000,
+            isClosable: true,
+            position: "top",
+          });
+        } else {
+          toast({
+            title: "Thank you!",
+            description: "Once the wait is over we will notify you",
+            status: "success",
+            duration: 7000,
+            isClosable: true,
+            position: "top",
+          });
+        }
       },
     );
   };
@@ -74,7 +93,6 @@ const WaitlistForm = () => {
             </FormControl>
             <FormControl
               mb={5}
-              isRequired
               isInvalid={!!errors.waitlist_name && touched.waitlist_name}
             >
               <FormLabel htmlFor={"waitlist_name"}>Name</FormLabel>
@@ -92,8 +110,13 @@ const WaitlistForm = () => {
               />
               <FormErrorMessage>Please enter a valid Name</FormErrorMessage>
             </FormControl>
-            <Button type={"submit"} isLoading={isSubmitting}>
-              JOIN
+            <Button
+              variant={"solid"}
+              colorScheme={"brandScheme"}
+              type={"submit"}
+              isLoading={isSubmitting}
+            >
+              Join our waitlist
             </Button>
           </form>
         )}

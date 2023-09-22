@@ -1,8 +1,8 @@
 "use client";
 
-import "./globals.css";
-import Fonts from "@/theme/fonts";
 import { Providers } from "@/components/providers";
+import Fonts from "@/theme/fonts";
+
 
 export default function RootLayout({
   children,

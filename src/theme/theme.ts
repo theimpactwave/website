@@ -56,7 +56,7 @@ const theme = {
     cssVarPrefix: "tiw",
   },
   styles: {
-    global: (props) => ({
+    global: (props: any) => ({
       ":root": {},
       "html, body": {
         height: "100%",

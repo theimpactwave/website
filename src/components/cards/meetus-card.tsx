@@ -20,6 +20,7 @@ const MeetusCard = (props: MeetusCardProps) => {
             justifyContent={"center"}
             alignItems={"center"}
             width={"100%"}
+            color={"white"}
             mb={4}
             sx={{
               "& img": {

@@ -52,6 +52,16 @@ const theme = {
   config: {
     cssVarPrefix: "tiw",
   },
+  styles: {
+    global: () => ({
+      ":root": {},
+      "html, body": {
+        height: "100%",
+        bg: "#002121",
+        color: "#ffffff",
+      },
+    }),
+  },
   fonts: {
     heading: `'Crimson', sans-serif`,
     body: `'Inter', sans-serif`,

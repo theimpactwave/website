@@ -3,7 +3,6 @@
 import { Providers } from "@/components/providers";
 import Fonts from "@/theme/fonts";
 
-
 export default function RootLayout({
   children,
 }: {

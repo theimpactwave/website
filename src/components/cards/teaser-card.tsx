@@ -1,13 +1,7 @@
-import {
-  Box,
-  Card,
-  CardBody,
-  CardProps,
-  Heading,
-  Text,
-} from "@chakra-ui/react";
-import Image, { ImageProps } from "next/image";
-import { StaticImport } from "next/dist/shared/lib/get-img-props";
+import type { CardProps } from "@chakra-ui/react";
+import { Box, Card, CardBody, Heading, Text } from "@chakra-ui/react";
+import type { StaticImport } from "next/dist/shared/lib/get-img-props";
+import Image from "next/image";
 
 export interface TeaserCardProps extends CardProps {
   icon: StaticImport;

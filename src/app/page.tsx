@@ -1,6 +1,7 @@
-import HomePage from "@/pages/home";
-import { Metadata } from "next";
+import type { Metadata } from "next";
+
 import DefaultLayout from "@/layouts/default";
+import HomePage from "@/pages/home";
 
 export const metadata: Metadata = {
   title: "Landing Page",

@@ -1,6 +1,7 @@
 import { Box, Heading, Stack } from "@chakra-ui/react";
-import WaitlistButton from "@/components/waitlist/button";
+
 import Container from "@/components/container";
+import WaitlistButton from "@/components/waitlist/button";
 
 const WaitlistBar = () => {
   return (

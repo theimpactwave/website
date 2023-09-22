@@ -1,25 +1,25 @@
 "use client";
 
-import { ChangeEvent, useState } from "react";
 import {
-  Box,
-  Input,
   Button,
   FormControl,
-  FormLabel,
   FormErrorMessage,
+  FormLabel,
+  Input,
 } from "@chakra-ui/react";
+import { Field, Formik } from "formik";
 import jsonp from "jsonp";
-import { Formik, Field } from "formik";
+import type { ChangeEvent } from "react";
+import { useState } from "react";
 
 const WaitlistForm = () => {
   const [emailValue, setEmailValue] = useState<string>("");
   const [nameValue, setNameValue] = useState<string>("");
-  const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
+  const [isSubmitting] = useState<boolean>(false);
 
   const subscribeUrl =
     "https://theimpactwave.us10.list-manage.com/subscribe/post?u=7d1db415cd5323a6d28ae2a83&amp;id=13081383c7&amp;f_id=002ecde5f0";
-  const onSubmitHandler = async (values: any, actions: any) => {
+  const onSubmitHandler = async (values: any) => {
     jsonp(
       `${subscribeUrl}&EMAIL=${values.waitlist_email}&UNAME=${values.waitlist_name}`,
       { param: "c" },
@@ -39,7 +39,7 @@ const WaitlistForm = () => {
         }}
         onSubmit={onSubmitHandler}
       >
-        {({ handleSubmit, errors, touched, setFieldValue, resetForm }) => (
+        {({ handleSubmit, errors, touched, setFieldValue }) => (
           <form onSubmit={handleSubmit} noValidate>
             <FormControl
               mb={5}

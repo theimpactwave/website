@@ -1,12 +1,12 @@
-import { Box, SimpleGrid } from '@chakra-ui/react'
+import { Box, SimpleGrid } from "@chakra-ui/react";
 const Partner = () => {
-  return (<>
-    <SimpleGrid>
-      <Box>
+  return (
+    <>
+      <SimpleGrid>
+        <Box />
+      </SimpleGrid>
+    </>
+  );
+};
 
-      </Box>
-    </SimpleGrid>
-  </>)
-}
-
-export default Partner
+export default Partner;

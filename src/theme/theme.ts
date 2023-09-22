@@ -1,10 +1,5 @@
-import {
-  extendTheme,
-  defineStyleConfig,
-  StyleFunctionProps,
-  Theme,
-  createMultiStyleConfigHelpers,
-} from "@chakra-ui/react";
+import type { Theme } from "@chakra-ui/react";
+import { createMultiStyleConfigHelpers, extendTheme } from "@chakra-ui/react";
 
 const CardHelpers = createMultiStyleConfigHelpers(["container"]);
 const CardStyles = CardHelpers.defineMultiStyleConfig({
@@ -17,12 +12,12 @@ const CardStyles = CardHelpers.defineMultiStyleConfig({
     },
   },
   variants: {
-    solid: (props: StyleFunctionProps) => ({
+    solid: () => ({
       container: {
         bg: "primary",
       },
     }),
-    outline: (props: StyleFunctionProps) => ({
+    outline: () => ({
       container: {
         borderColor: "brand",
       },

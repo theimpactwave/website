@@ -9,8 +9,8 @@
     "prepare": "husky install",
     "typecheck": "tsc --noEmit",
     "pretty": "npx prettier --write 'src/**/*.{ts,tsx}'",
-    "lint": "npx eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 10",
-    "prettylint": "npx prettier --write 'src/**/*.{ts,tsx}' && npx eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 10",
+    "lint": "npx eslint src --ext ts,tsx --report-unused-disable-directives --fix --max-warnings 10",
+    "prettylint": "npx prettier --write 'src/**/*.{ts,tsx}' && npx eslint src --ext ts,tsx --report-unused-disable-directives --fix --max-warnings 10",
     "i18:extract": "i18next 'src/**/*.{ts,tsx}' -c ./i18next-parser.config.js",
     "i18:po": "run() { i18next-conv -l $1 -s ./src/locales/$1/common.json -t ./src/locales/$1/common.po; }; run",
     "i18:json": "run() { i18next-conv -l $1 -s ./src/locales/$1/common.po -t ./src/locales/$1/common.json; }; run"

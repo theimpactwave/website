@@ -1,11 +1,12 @@
-import { Box, BoxProps, Text } from "@chakra-ui/react";
+import type { BoxProps } from "@chakra-ui/react";
+import { Box, Text } from "@chakra-ui/react";
 
 export interface CircleNumberProps extends BoxProps {
   number: number;
 }
 
 const CircleNumber = (props: CircleNumberProps) => {
-  const { number, ...rest } = props;
+  const { number } = props;
   return (
     <>
       <Box

@@ -1,4 +1,5 @@
-import { Box, type BoxProps, Stack, Link } from "@chakra-ui/react";
+import { Box, type BoxProps, Link, Stack } from "@chakra-ui/react";
+
 import Logo from "@/components/logo";
 
 const Footer = (props: BoxProps) => {

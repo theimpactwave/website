@@ -1,8 +1,5 @@
-import {Stack} from "@chakra-ui/react";
-import TeaserCard from "@/components/cards/teaser-card";
-import TeaserIcon3 from "@/assets/teaser-icon3.svg";
-import TeaserIcon2 from "@/assets/teaser-icon2.svg";
-import TeaserIcon1 from "@/assets/teaser-icon1.svg";
+import { Stack } from "@chakra-ui/react";
+
 import MeetusCard from "@/components/cards/meetus-card";
 
 const Meetus = () => {
@@ -42,7 +39,8 @@ const Meetus = () => {
           }
         />
       </Stack>
-    </>)
-}
+    </>
+  );
+};
 
-export default Meetus
+export default Meetus;

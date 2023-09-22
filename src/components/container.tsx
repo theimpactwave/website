@@ -1,8 +1,5 @@
-import { FC, PropsWithChildren } from "react";
-import {
-  Container as ChakraContainer,
-  ContainerProps as ChakraContainerProps,
-} from "@chakra-ui/react";
+import type { ContainerProps as ChakraContainerProps } from "@chakra-ui/react";
+import { Container as ChakraContainer } from "@chakra-ui/react";
 
 export interface ContainerProps extends ChakraContainerProps {}
 const Container = (props: ContainerProps) => {

@@ -1,13 +1,6 @@
-import {
-  Box,
-  Card,
-  CardBody,
-  CardProps,
-  Heading,
-  Text,
-} from "@chakra-ui/react";
-import Image, { ImageProps } from "next/image";
-import { StaticImport } from "next/dist/shared/lib/get-img-props";
+import type { CardProps } from "@chakra-ui/react";
+import { Box, Card, CardBody, Heading, Text } from "@chakra-ui/react";
+import Image from "next/image";
 
 export interface MeetusCardProps extends CardProps {
   image: string;
@@ -30,8 +23,8 @@ const MeetusCard = (props: MeetusCardProps) => {
             mb={4}
             sx={{
               "& img": {
-                borderRadius: "50%"
-              }
+                borderRadius: "50%",
+              },
             }}
           >
             <Image src={image} alt={""} width={100} height={100} />
@@ -39,7 +32,9 @@ const MeetusCard = (props: MeetusCardProps) => {
           <Heading as={"h2"} fontSize={32} mb={4} fontWeight={400}>
             {header}
           </Heading>
-          <Text color={"brand"} fontWeight={700} mb={4}>{date}</Text>
+          <Text color={"brand"} fontWeight={700} mb={4}>
+            {date}
+          </Text>
           <Text>{content}</Text>
         </CardBody>
       </Card>

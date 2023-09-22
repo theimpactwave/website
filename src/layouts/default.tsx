@@ -1,7 +1,7 @@
-import { FC, PropsWithChildren } from "react";
-import Header from "@/modules/header";
+import type { FC, PropsWithChildren } from "react";
+
 import Footer from "@/modules/footer";
-import Container from "@/components/container";
+import Header from "@/modules/header";
 
 const DefaultLayout: FC<PropsWithChildren> = ({
   children,

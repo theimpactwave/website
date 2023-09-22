@@ -1,29 +1,40 @@
 "use client";
 
+import type { ButtonProps, ModalProps } from "@chakra-ui/react";
 import {
   Button,
   Modal,
+  ModalBody,
   ModalCloseButton,
   ModalContent,
-  ModalBody,
   ModalHeader,
   ModalOverlay,
-  ModalProps, ButtonProps, useDisclosure,
+  useDisclosure,
 } from "@chakra-ui/react";
-import { InlineWidget } from "react-calendly";
-import CalendlyIcon from "@/assets/calendly.svg"
 import Image from "next/image";
+import { InlineWidget } from "react-calendly";
+
+import CalendlyIcon from "@/assets/calendly.svg";
 
 export interface CalendlyProps extends ButtonProps {
-  modalProps?: Omit<ModalProps, "children" | "isOpen" | "onClose">
+  modalProps?: Omit<ModalProps, "children" | "isOpen" | "onClose">;
 }
 
 const Calendly = (props: CalendlyProps): JSX.Element => {
   const { modalProps, ...rest } = props;
   const { isOpen, onClose, onOpen } = useDisclosure();
 
-  return (<>
-      <Button variant={"outline"} colorScheme={"blue"} leftIcon={<Image src={CalendlyIcon} alt={""} width={20} height={20} />} onClick={onOpen} {...rest}>Calendly</Button>
+  return (
+    <>
+      <Button
+        variant={"outline"}
+        colorScheme={"blue"}
+        leftIcon={<Image src={CalendlyIcon} alt={""} width={20} height={20} />}
+        onClick={onOpen}
+        {...rest}
+      >
+        Calendly
+      </Button>
       <Modal
         size={["md", "lg", "xl"]}
         isOpen={isOpen}
@@ -43,8 +54,7 @@ const Calendly = (props: CalendlyProps): JSX.Element => {
           </ModalBody>
         </ModalContent>
       </Modal>
-  </>
-
+    </>
   );
 };
 

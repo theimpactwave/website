@@ -49,7 +49,8 @@ module.exports = {
     "react-refresh",
     "@typescript-eslint",
     "autofix",
-    "import-alias"
+    "import-alias",
+    "simple-import-sort"
   ],
   rules: {
     "react/react-in-jsx-scope": "off",
@@ -89,34 +90,15 @@ module.exports = {
         ]
       }
     ],
-    "import/order": [
-      "error",
-      {
-        "groups": [
-          "builtin",
-          "external",
-          "parent",
-          "sibling",
-          "index",
-          "object",
-          "type"
-        ],
-        "pathGroups": [
-          {
-            "pattern": "@/**/**",
-            "group": "parent",
-            "position": "before"
-          }
-        ],
-        "alphabetize": {"order": "asc"}
-      }
-    ],
+    "import/order": "off",
     "no-restricted-imports": [
       "error",
       {
         "patterns": ["../"]
       }
     ],
+    "simple-import-sort/imports": "error",
+    "simple-import-sort/exports": "error"
   },
   overrides: [
     {

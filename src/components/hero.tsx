@@ -1,5 +1,6 @@
 import { Box, Heading } from "@chakra-ui/react";
 import Image from "next/image";
+
 import WaitlistButton from "@/components/waitlist/button";
 
 const Hero = () => {

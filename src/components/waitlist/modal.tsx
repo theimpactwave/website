@@ -1,14 +1,15 @@
 "use client";
 
+import type { ModalProps } from "@chakra-ui/react";
 import {
   Modal,
+  ModalBody,
   ModalCloseButton,
   ModalContent,
-  ModalBody,
   ModalHeader,
   ModalOverlay,
-  ModalProps,
 } from "@chakra-ui/react";
+
 import WaitlistForm from "@/components/waitlist/form";
 
 export interface WaitlistModalProps extends Omit<ModalProps, "children"> {}

@@ -1,8 +1,9 @@
 import { Stack } from "@chakra-ui/react";
-import TeaserCard from "@/components/cards/teaser-card";
+
 import TeaserIcon1 from "@/assets/teaser-icon1.svg";
 import TeaserIcon2 from "@/assets/teaser-icon2.svg";
 import TeaserIcon3 from "@/assets/teaser-icon3.svg";
+import TeaserCard from "@/components/cards/teaser-card";
 
 const HomeTeaser = () => {
   return (

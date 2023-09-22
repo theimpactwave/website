@@ -1,4 +1,5 @@
 import { Box, type BoxProps, Stack } from "@chakra-ui/react";
+
 import Logo from "@/components/logo";
 import WaitlistButton from "@/components/waitlist/button";
 

@@ -2,7 +2,9 @@
 
 import {
   Box,
+  Button,
   Heading,
+  Link,
   Modal,
   ModalBody,
   ModalCloseButton,
@@ -11,18 +13,17 @@ import {
   ModalOverlay,
   Stack,
   Text,
-  Link,
   useDisclosure,
-  Button,
 } from "@chakra-ui/react";
-import HomeTeaser from "@/modules/home/teaser";
-import WaitlistBar from "@/components/waitlist/bar";
-import Container from "@/components/container";
 import Image from "next/image";
-import CircleNumber from "@/components/circle-number";
-import Meetus from "@/modules/home/meetus";
-import Hairline from "@/components/hairline";
+
 import Calendly from "@/components/calendly";
+import CircleNumber from "@/components/circle-number";
+import Container from "@/components/container";
+import Hairline from "@/components/hairline";
+import WaitlistBar from "@/components/waitlist/bar";
+import Meetus from "@/modules/home/meetus";
+import HomeTeaser from "@/modules/home/teaser";
 
 const HomePage = () => {
   const { isOpen, onClose, onOpen } = useDisclosure();
@@ -34,9 +35,25 @@ const HomePage = () => {
   return (
     <>
       <Container>
-        <Heading as={"h3"} textAlign={"center"} mb={2} color={"brand"} fontWeight={700}>Welcome</Heading>
-        <Heading as={"h4"} fontSize={24} fontWeight={400} textAlign={"center"} mb={12}>
-          Welcome to The Impact Wave: Empower Your Giving. Discover handpicked causes, effortless donations, and transparent impact. Join our community and make every contribution count.
+        <Heading
+          as={"h3"}
+          textAlign={"center"}
+          mb={2}
+          color={"brand"}
+          fontWeight={700}
+        >
+          Welcome
+        </Heading>
+        <Heading
+          as={"h4"}
+          fontSize={24}
+          fontWeight={400}
+          textAlign={"center"}
+          mb={12}
+        >
+          Welcome to The Impact Wave: Empower Your Giving. Discover handpicked
+          causes, effortless donations, and transparent impact. Join our
+          community and make every contribution count.
         </Heading>
         <Hairline />
         <Box mb={12} />
@@ -63,19 +80,25 @@ const HomePage = () => {
               <Stack direction={"row"} alignItems={"baseline"} spacing={4}>
                 <CircleNumber number={1} />
                 <Text flex={1}>
-                  Register on theimpactwave.org and either follow our impact influencers or simply start to make an impact by:
+                  Register on theimpactwave.org and either follow our impact
+                  influencers or simply start to make an impact by:
                 </Text>
               </Stack>
               <Stack direction={"row"} alignItems={"baseline"} spacing={4}>
                 <CircleNumber number={2} />
                 <Text flex={1}>
-                  Define where you want to spread your impact funding to. Select the domains you want to power. Make a one-time impact funding or set monthly recurring funding campaigns. Our ImpactDAO distributes your fundings for the highest impact.
+                  Define where you want to spread your impact funding to. Select
+                  the domains you want to power. Make a one-time impact funding
+                  or set monthly recurring funding campaigns. Our ImpactDAO
+                  distributes your fundings for the highest impact.
                 </Text>
               </Stack>
               <Stack direction={"row"} alignItems={"baseline"} spacing={4}>
                 <CircleNumber number={3} />
                 <Text flex={1}>
-                  See your impact in action and get insides from your funding stream. See where your funding's have been distributed too and connect with their stories.
+                  See your impact in action and get insides from your funding
+                  stream. See where your funding&apos;s have been distributed
+                  too and connect with their stories.
                 </Text>
               </Stack>
             </Stack>
@@ -128,7 +151,9 @@ const HomePage = () => {
         <Hairline />
         <Box mb={12} textAlign={"center"}>
           <Heading mb={4}>Partners and Investors</Heading>
-          <Text mb={4} fontWeight={700}>Book a 30 min. meeting with us:</Text>
+          <Text mb={4} fontWeight={700}>
+            Book a 30 min. meeting with us:
+          </Text>
           <Calendly />
         </Box>
       </Container>

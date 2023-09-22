@@ -1,5 +1,6 @@
 import type { Theme } from "@chakra-ui/react";
 import { createMultiStyleConfigHelpers, extendTheme } from "@chakra-ui/react";
+import { mode } from "@chakra-ui/theme-tools";
 
 const CardHelpers = createMultiStyleConfigHelpers(["container"]);
 const CardStyles = CardHelpers.defineMultiStyleConfig({
@@ -55,14 +56,13 @@ const theme = {
     cssVarPrefix: "tiw",
   },
   styles: {
-    global: () => ({
+    global: (props) => ({
       ":root": {},
       "html, body": {
         height: "100%",
-        bg: "#002121",
-        color: "#ffffff",
+        bg: mode("#002121", "#002121")(props),
+        color: mode("#ffffff", "#ffffff")(props),
       },
-      body: "#ffffff",
     }),
   },
   fonts: {

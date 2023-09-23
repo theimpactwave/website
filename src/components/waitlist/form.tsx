@@ -28,8 +28,8 @@ const WaitlistForm = () => {
         mode: process.env.NODE_ENV === "development" ? "no-cors" : "cors",
         method: "POST",
         headers: {
-          "Authorization": "0addd8d01599f37adf00cf7251879de0-us10",
-          "Accept": "application/json",
+          Authorization: "0addd8d01599f37adf00cf7251879de0-us10",
+          Accept: "application/json",
           "Content-Type": "application/json",
         },
       },

@@ -52,7 +52,7 @@ const HomePage = () => {
           mb={12}
         >
           Welcome to The Impact Wave: Empower Your Giving. Discover handpicked
-          causes, effortless donations, and transparent impact. Join our
+          causes, effortless funding, and transparent impact. Join our
           community and make every contribution count.
         </Heading>
         <Hairline />

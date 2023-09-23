@@ -33,7 +33,7 @@ const HomePage = () => {
   };
 
   return (
-    <>
+    <Box px={4}>
       <Container>
         <Heading
           as={"h3"}
@@ -46,7 +46,7 @@ const HomePage = () => {
         </Heading>
         <Heading
           as={"h4"}
-          fontSize={24}
+          fontSize={[20, 24, 24]}
           fontWeight={400}
           textAlign={"center"}
           mb={12}
@@ -89,7 +89,7 @@ const HomePage = () => {
                 <Text flex={1}>
                   Define where you want to spread your impact funding to. Select
                   the domains you want to power. Make a one-time impact funding
-                  or set monthly recurring funding campaigns. Our ImpactDAO
+                  or set monthly recurring funding campaigns. Our Impact DAO
                   distributes your fundings for the highest impact.
                 </Text>
               </Stack>
@@ -117,10 +117,48 @@ const HomePage = () => {
         </Stack>
         <Box mb={12} />
         <Hairline />
+        <Container>
+          <Stack
+            direction={["column", "column", "row"]}
+            spacing={8}
+            justifyContent={"space-between"}
+            alignItems={"top"}
+          >
+            <Box order={[1, 1, 0]} flex={1}>
+              <Image
+                src={"/images/impactdao.jpg"}
+                alt={""}
+                width={1080}
+                height={1637}
+                layout={"responsive"}
+              />
+            </Box>
+            <Box order={[0, 0, 1]} flex={[1, 1, "1 1 28%"]}>
+              <Heading as={"h3"} mb={4}>
+                Transparent distribution of funds powered by blockchain
+                technology
+              </Heading>
+              <Text mb={4} fontWeight={700}>
+                Here is how it works:
+              </Text>
+              <Text>
+                After you have defined how and where you want to spread your
+                funding the Impact DAO takes care of the fair distributions
+                amongst the eligible initiatives. The DAO calculates the payout
+                by transparent algorithms taking into accounts factors like
+                geography, size and stage of initiative, current initiative
+                impact curvea and AI powered impact evaluation.
+              </Text>
+            </Box>
+          </Stack>
+        </Container>
+        <Box mb={12} />
+        <Hairline />
         <Box textAlign={"center"} width={"100%"}>
           <Heading
             as={"h4"}
             display={"inline-block"}
+            fontSize={[28, 34, 34]}
             fontWeight={700}
             fontStyle={"italic"}
             color={"brand"}
@@ -180,7 +218,7 @@ const HomePage = () => {
           </ModalBody>
         </ModalContent>
       </Modal>
-    </>
+    </Box>
   );
 };
 

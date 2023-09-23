@@ -1,12 +1,13 @@
 import type { CardProps } from "@chakra-ui/react";
 import { Box, Card, CardBody, Heading, Text } from "@chakra-ui/react";
 import Image from "next/image";
+import type { ReactElement, ReactNode } from "react";
 
 export interface MeetusCardProps extends CardProps {
   image: string;
   date: string;
   header: string;
-  content: string;
+  content: string | ReactElement | ReactNode | JSX.Element;
 }
 
 const MeetusCard = (props: MeetusCardProps) => {
@@ -36,7 +37,7 @@ const MeetusCard = (props: MeetusCardProps) => {
           <Text color={"brand"} fontWeight={700} mb={4}>
             {date}
           </Text>
-          <Text>{content}</Text>
+          {content}
         </CardBody>
       </Card>
     </>

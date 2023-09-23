@@ -3,11 +3,11 @@ import { Box, Card, CardBody, Heading, Text } from "@chakra-ui/react";
 import Image from "next/image";
 import type { ReactElement, ReactNode } from "react";
 
-export interface MeetusCardProps extends CardProps {
+export interface MeetusCardProps extends Omit<CardProps, "content"> {
   image: string;
   date: string;
   header: string;
-  content: string | ReactElement | ReactNode | JSX.Element;
+  content: string | ReactElement | ReactNode;
 }
 
 const MeetusCard = (props: MeetusCardProps) => {

@@ -52,8 +52,8 @@ const HomePage = () => {
           mb={12}
         >
           Welcome to The Impact Wave: Empower Your Giving. Discover handpicked
-          causes, effortless funding, and transparent impact. Join our
-          community and make every contribution count.
+          causes, effortless funding, and transparent impact. Join our community
+          and make every contribution count.
         </Heading>
         <Hairline />
         <Box mb={12} />

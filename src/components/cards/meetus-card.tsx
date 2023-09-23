@@ -31,7 +31,7 @@ const MeetusCard = (props: MeetusCardProps) => {
           >
             <Image src={image} alt={""} width={100} height={100} />
           </Box>
-          <Heading as={"h2"} fontSize={32} mb={4} fontWeight={400}>
+          <Heading as={"h2"} fontSize={[26, 28, 30]} mb={4} fontWeight={400}>
             {header}
           </Heading>
           <Text color={"brand"} fontWeight={700} mb={4}>

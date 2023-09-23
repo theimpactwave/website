@@ -9,31 +9,41 @@ const Hero = () => {
       <Box
         sx={{
           position: "relative",
-          zIndex: 0,
           height: [240, 300, 400],
         }}
       >
         <Box
-          sx={{
-            position: "absolute",
-            zIndex: 1,
-            top: ["8%", "10%", "15%"],
-            left: ["4%", "6%", "10%"],
-            bg: "rgba(0,0,0,.4)",
-            p: 8,
-          }}
+          display={"flex"}
+          justifyContent={"center"}
+          position={"absolute"}
+          zIndex={1}
+          width={"100%"}
+          height={"auto"}
         >
-          <Heading
-            as={"h1"}
-            fontSize={["24", "33", "50"]}
-            sx={{
-              mb: 4,
-            }}
-          >
-            Unleash Your Generosity, <br />
-            Amplify Your Impact
-          </Heading>
-          <WaitlistButton />
+          <Box width={920}>
+            <Box
+              sx={{
+                position: "relative",
+                top: ["12%", "18%", "20%"],
+                left: ["5%", "5%", "2%"],
+                maxW: [370, 500, 600],
+                bg: "rgba(0,0,0,.4)",
+                p: 8,
+              }}
+            >
+              <Heading
+                as={"h1"}
+                fontSize={["24", "33", "50"]}
+                sx={{
+                  mb: 4,
+                }}
+              >
+                Unleash Your Generosity, <br />
+                Amplify Your Impact
+              </Heading>
+              <WaitlistButton />
+            </Box>
+          </Box>
         </Box>
         <Image
           src={"/images/teaser-1920-strip.jpg"}

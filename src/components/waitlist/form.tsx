@@ -27,8 +27,9 @@ const WaitlistForm = () => {
       `${subscribeUrl}&EMAIL=${values.waitlist_email}&UNAME=${values.waitlist_name}`,
       { param: "c", timeout: 10000 },
       (err) => {
+        alert(err);
         setIsSubmitting(false);
-        if (err instanceof Error) {
+        if (err) {
           toast({
             title: "Sorry that did not work",
             status: "error",

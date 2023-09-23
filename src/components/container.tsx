@@ -5,7 +5,7 @@ export interface ContainerProps extends ChakraContainerProps {}
 const Container = (props: ContainerProps) => {
   const { children, ...rest } = props;
   return (
-    <ChakraContainer maxW={920} {...rest}>
+    <ChakraContainer position={"relative"} maxW={920} {...rest}>
       {children}
     </ChakraContainer>
   );

@@ -9,7 +9,6 @@ import {
   useToast,
 } from "@chakra-ui/react";
 import { Field, Formik } from "formik";
-import jsonp from "jsonp";
 import type { ChangeEvent } from "react";
 import { useState } from "react";
 
@@ -23,7 +22,55 @@ const WaitlistForm = () => {
     "https://theimpactwave.us10.list-manage.com/subscribe/post?u=7d1db415cd5323a6d28ae2a83&amp;id=13081383c7&amp;f_id=002ecde5f0";
   const onSubmitHandler = async (values: any) => {
     setIsSubmitting(true);
-    jsonp(
+    await fetch(
+      `${subscribeUrl}&EMAIL=${values.waitlist_email}&UNAME=${values.waitlist_name}&b_7d1db415cd5323a6d28ae2a83_13081383c7=`,
+      {
+        mode: process.env.NODE_ENV === "development" ? "no-cors" : "cors",
+        method: "POST",
+        headers: {
+          "Authorization": "0addd8d01599f37adf00cf7251879de0-us10",
+          "Accept": "application/json",
+          "Content-Type": "application/json",
+        },
+      },
+    )
+      .then((response: Response) => {
+        if (response.status === 0 || response.status === 200) {
+          setEmailValue("");
+          setNameValue("");
+          toast({
+            title: "Thank you!",
+            description: "Once the wait is over we will notify you",
+            status: "success",
+            duration: 60000,
+            isClosable: true,
+            position: "top",
+          });
+        } else {
+          toast({
+            title: "Sorry that did not work",
+            status: "error",
+            duration: 7000,
+            isClosable: true,
+            position: "top",
+          });
+        }
+      })
+      .catch((e: Error) => {
+        toast({
+          title: "Sorry that did not work",
+          description: e.message,
+          status: "error",
+          duration: 7000,
+          isClosable: true,
+          position: "top",
+        });
+      })
+      .finally(() => {
+        setIsSubmitting(false);
+      });
+
+    /*jsonp(
       `${subscribeUrl}&EMAIL=${values.waitlist_email}&UNAME=${values.waitlist_name}`,
       { param: "c", timeout: 10000 },
       (err) => {
@@ -48,8 +95,9 @@ const WaitlistForm = () => {
           });
         }
       },
-    );
+    );*/
   };
+
   return (
     <>
       <Formik
@@ -117,7 +165,7 @@ const WaitlistForm = () => {
               type={"submit"}
               isLoading={isSubmitting}
             >
-              Join our waitlist
+              Join now
             </Button>
           </form>
         )}

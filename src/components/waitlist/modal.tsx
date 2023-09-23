@@ -29,7 +29,7 @@ const WaitlistModal = (props: WaitlistModalProps): JSX.Element => {
     >
       <ModalOverlay />
       <ModalContent>
-        <ModalHeader pt={10}>Waitlist</ModalHeader>
+        <ModalHeader pt={10}>Join our Waitlist</ModalHeader>
         <ModalCloseButton />
         <ModalBody mb={10}>
           <WaitlistForm />

@@ -25,7 +25,7 @@ const WaitlistForm = () => {
     await fetch(
       `${subscribeUrl}&EMAIL=${values.waitlist_email}&UNAME=${values.waitlist_name}&b_7d1db415cd5323a6d28ae2a83_13081383c7=`,
       {
-        mode: process.env.NODE_ENV === "development" ? "no-cors" : undefined,
+        mode: process.env.NODE_ENV === "development" ? "no-cors" : "no-cors",
         method: "POST",
         headers: {
           Authorization: "0addd8d01599f37adf00cf7251879de0-us10",

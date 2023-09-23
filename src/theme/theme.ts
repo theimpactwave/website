@@ -60,7 +60,7 @@ const theme = {
       ":root": {},
       "html, body": {
         height: "100%",
-        bg: mode("#002121", "#002121")(props),
+        bg: mode("#000000", "#000000")(props),
         color: mode("#ffffff", "#ffffff")(props),
       },
     }),

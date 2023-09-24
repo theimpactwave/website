@@ -59,4 +59,3 @@ We close the appreciation gap the traditional grant funding eventually produces 
 
 More to come soon ...
 
-

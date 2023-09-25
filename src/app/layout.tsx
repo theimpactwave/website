@@ -12,6 +12,17 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <Script
+        strategy="afterInteractive"
+        src="https://www.googletagmanager.com/gtag/js?id=G-TGBM4J07SN"
+      />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-TGBM4J07SN');
+        `}
+      </Script>
       <head>
         <link
           rel="apple-touch-icon"
@@ -36,16 +47,6 @@ export default function RootLayout({
         <meta name="theme-color" content="#ffffff" />
         <Fonts />
       </head>
-      <Script
-        strategy="afterInteractive"
-        src="https://www.googletagmanager.com/gtag/js?id=G-TGBM4J07SN"
-      />
-      <Script id="google-analytics" strategy="afterInteractive">
-        {`window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-TGBM4J07SN');`}
-      </Script>
       <body>
         <Providers>{children}</Providers>
       </body>

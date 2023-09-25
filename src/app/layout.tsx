@@ -1,5 +1,7 @@
 "use client";
 
+import Script from "next/script";
+
 import { Providers } from "@/components/providers";
 import Fonts from "@/theme/fonts";
 
@@ -34,6 +36,16 @@ export default function RootLayout({
         <meta name="theme-color" content="#ffffff" />
         <Fonts />
       </head>
+      <Script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-QWP6D6MHWD"
+      />
+      <Script id="google-analytics" strategy="lazyOnload">
+        {`window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-QWP6D6MHWD');`}
+      </Script>
       <body>
         <Providers>{children}</Providers>
       </body>

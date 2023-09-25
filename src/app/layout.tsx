@@ -37,10 +37,10 @@ export default function RootLayout({
         <Fonts />
       </head>
       <Script
-        async
+        strategy="afterInteractive"
         src="https://www.googletagmanager.com/gtag/js?id=G-TGBM4J07SN"
       />
-      <Script id="google-analytics" strategy="lazyOnload">
+      <Script id="google-analytics" strategy="afterInteractive">
         {`window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());

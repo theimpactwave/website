@@ -23,7 +23,7 @@ const WaitlistForm = () => {
   const onSubmitHandler = async (values: any) => {
     setIsSubmitting(true);
     await fetch(
-      `${subscribeUrl}&EMAIL=${values.waitlist_email}&UNAME=${values.waitlist_name}&b_7d1db415cd5323a6d28ae2a83_13081383c7=`,
+      `${subscribeUrl}&EMAIL=${values.waitlist_email}&UNAME=${values.waitlist_name}&tags=14186789`,
       {
         mode: process.env.NODE_ENV === "development" ? "no-cors" : "no-cors",
         method: "POST",

@@ -22,6 +22,7 @@ import CircleNumber from "@/components/circle-number";
 import Container from "@/components/container";
 import Hairline from "@/components/hairline";
 import WaitlistBar from "@/components/waitlist/bar";
+import Initiatives from "@/modules/home/initiatives";
 import Meetus from "@/modules/home/meetus";
 import HomeTeaser from "@/modules/home/teaser";
 
@@ -152,6 +153,12 @@ const HomePage = () => {
             </Box>
           </Stack>
         </Container>
+        <Box mb={12} />
+        <Hairline />
+        <Box mb={12} textAlign={"center"}>
+          <Heading>Meet some of our positive impact makers:</Heading>
+        </Box>
+        <Initiatives />
         <Box mb={12} />
         <Hairline />
         <Box textAlign={"center"} width={"100%"}>

@@ -5,7 +5,7 @@ import InitiativeCard from "@/components/cards/initiative-card";
 const Initiatives = () => {
   return (
     <>
-      <SimpleGrid columns={3} spacing={8}>
+      <SimpleGrid columns={[1, 1, 3]} spacing={8}>
         <InitiativeCard
           name={"Lillian Kanjadza"}
           organisation={"Agronet Global Inc."}

@@ -1,4 +1,4 @@
-import { Box, type BoxProps, Link, Stack } from "@chakra-ui/react";
+import { Box, type BoxProps, Hide, Link, Stack, Text } from "@chakra-ui/react";
 
 import Logo from "@/components/logo";
 
@@ -31,6 +31,25 @@ const Footer = (props: BoxProps) => {
               team@theimpactwave.org
             </Link>
           </Box>
+        </Stack>
+        <Stack
+          direction={["column", "row", "row"]}
+          spacing={[1, 4, 4]}
+          justifyContent={"center"}
+          alignItems={"center"}
+          p={4}
+          color={"white"}
+          fontSize={12}
+        >
+          <Text>&copy; 2023 The Impact Wave</Text>
+          <Hide below={"sm"}>
+            <Text>&#124;</Text>
+          </Hide>
+          <Link href={"/terms"}>Terms of use</Link>
+          <Hide below={"sm"}>
+            <Text>&#124;</Text>
+          </Hide>
+          <Link href={"/privacy"}>Privacy policy</Link>
         </Stack>
       </Box>
     </>

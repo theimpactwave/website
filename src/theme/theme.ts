@@ -15,11 +15,12 @@ const CardStyles = CardHelpers.defineMultiStyleConfig({
   variants: {
     solid: () => ({
       container: {
-        bg: "primary",
+        bg: "brand",
       },
     }),
     outline: () => ({
       container: {
+        color: "#00000",
         borderColor: "brand",
       },
     }),
@@ -37,15 +38,34 @@ const ModalHelpers = createMultiStyleConfigHelpers([
 const ModalStyles = ModalHelpers.defineMultiStyleConfig({
   baseStyle: {
     overlay: {
-      background: "blackAlpha.400",
+      color: "black",
+      background: "blackAlpha.700",
     },
     dialog: {
       border: "1px solid",
-      borderColor: "brand",
-      background:
-        "linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.15)), rgba(229, 229, 229, 0.15)",
-      backdropFilter: "blur(23.5px)",
+      borderColor: "black",
+      background: "white",
     },
+  },
+});
+
+const InputHelpers = createMultiStyleConfigHelpers(["field", "element"]);
+const InputStyles = InputHelpers.defineMultiStyleConfig({
+  baseStyle: {
+    field: {
+      p: 5,
+    },
+    defaultProps: {
+      focusBorderColor: "gray.500",
+    },
+  },
+  variants: {
+    outline: () => ({
+      field: {
+        color: "black",
+        borderColor: "gray.500",
+      },
+    }),
   },
 });
 
@@ -60,8 +80,8 @@ const theme = {
       ":root": {},
       "html, body": {
         height: "100%",
-        bg: mode("#000000", "#000000")(props),
-        color: mode("#ffffff", "#ffffff")(props),
+        bg: mode("#ffffff", "#ffffff")(props),
+        color: mode("#003333", "#003333")(props),
       },
     }),
   },
@@ -72,7 +92,11 @@ const theme = {
   colors: {
     brand: "#5DBD77",
     primary: "#5DBD77",
-    secondary: "#40e0d0",
+    secondary: "#419dbc",
+    tertiary: "#264494",
+    quaternary: "#71c2cb",
+    silver: "#E8E8E9",
+    red: "#BD5D64",
     brandScheme: {
       100: "#5DBD77",
       200: "#5DBD77",
@@ -84,10 +108,44 @@ const theme = {
       800: "#5DBD77",
       900: "#5DBD77",
     },
+    secondaryScheme: {
+      100: "#419dbc",
+      200: "#419dbc",
+      300: "#419dbc",
+      400: "#419dbc",
+      500: "#419dbc",
+      600: "#419dbc",
+      700: "#419dbc",
+      800: "#419dbc",
+      900: "#419dbc",
+    },
+    tertiaryScheme: {
+      100: "#264494",
+      200: "#264494",
+      300: "#264494",
+      400: "#264494",
+      500: "#264494",
+      600: "#264494",
+      700: "#264494",
+      800: "#264494",
+      900: "#264494",
+    },
+    quaternaryScheme: {
+      100: "#71c2cb",
+      200: "#71c2cb",
+      300: "#71c2cb",
+      400: "#71c2cb",
+      500: "#71c2cb",
+      600: "#71c2cb",
+      700: "#71c2cb",
+      800: "#71c2cb",
+      900: "#71c2cb",
+    },
   },
   components: {
     Card: CardStyles,
     Modal: ModalStyles,
+    Input: InputStyles,
   },
 };
 

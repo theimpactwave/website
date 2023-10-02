@@ -5,7 +5,7 @@ import WaitlistButton from "@/components/waitlist/button";
 
 const WaitlistBar = () => {
   return (
-    <Box bg={"secondary"}>
+    <Box bg={"silver"}>
       <Container>
         <Box p={5}>
           <Stack

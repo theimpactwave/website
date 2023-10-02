@@ -233,7 +233,6 @@ const Policy = () => {
         <DefaultLayout>
           <Container
             sx={{
-              "& > *": { color: "white !important" },
               p: { mb: 4 },
             }}
           >

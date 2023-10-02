@@ -440,7 +440,6 @@ const Terms = () => {
         <DefaultLayout>
           <Container
             sx={{
-              "& > *": { color: "white !important" },
               p: { mb: 4 },
             }}
           >

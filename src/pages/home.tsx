@@ -105,7 +105,14 @@ const HomePage = () => {
             </Stack>
           </Box>
           <Box flex={1}>
-            <Link onClick={onImageClickHandler}>
+            <Link
+              onClick={onImageClickHandler}
+              sx={{
+                "& > img": {
+                  borderRadius: 10,
+                },
+              }}
+            >
               <Image
                 src={"/images/wavemixer.jpg"}
                 alt={""}
@@ -125,7 +132,15 @@ const HomePage = () => {
             justifyContent={"space-between"}
             alignItems={"top"}
           >
-            <Box order={[1, 1, 0]} flex={1}>
+            <Box
+              order={[1, 1, 0]}
+              flex={1}
+              sx={{
+                "& > img": {
+                  borderRadius: 10,
+                },
+              }}
+            >
               <Image
                 src={"/images/impactdao.jpg"}
                 alt={""}
@@ -168,7 +183,7 @@ const HomePage = () => {
             fontSize={[28, 34, 34]}
             fontWeight={700}
             fontStyle={"italic"}
-            color={"brand"}
+            color={"secondary"}
             maxW={["80%", "70%", "50%"]}
           >
             &ldquo;Our vision is to secure, simplify and spread funding to
@@ -181,7 +196,8 @@ const HomePage = () => {
             as={Link}
             href="mailto:team@theimpactwave.org"
             variant={"solid"}
-            colorScheme={"brandScheme"}
+            color={"white"}
+            colorScheme={"secondaryScheme"}
           >
             Get in touch
           </Button>

@@ -28,7 +28,7 @@ const Calendly = (props: CalendlyProps): JSX.Element => {
     <>
       <Button
         variant={"outline"}
-        colorScheme={"blue"}
+        colorScheme={"tertiaryScheme"}
         leftIcon={<Image src={CalendlyIcon} alt={""} width={20} height={20} />}
         onClick={onOpen}
         {...rest}

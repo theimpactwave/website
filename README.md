@@ -1,9 +1,9 @@
-# The Impact Wave
+# The Impact Wave - Conceptional Framework
 
 ## Table of contents
 
 - 1 🚀 [About](#about)
-- 2 📋 [Getting Started](#start)
+- 2 📋 [Platform Structure](#platform)
 - 3 💻 [Usage](#usage)
 - 4 ✨ [Development](#development)
 - 5 💖 [Troubleshooting](#troubleshooting)
@@ -56,5 +56,23 @@ impact but also encourage the peers and environment of local impact-makers to fo
 
 We close the appreciation gap that traditional grant funding eventually creates and cannot or is unwilling to address.
 
-More to come soon ...
 
+<a name="Platform Structure"></a>
+
+### 2. Platform structure
+
+<a name="Platform strategies"></a>
+
+### 3. Platform strategies
+
+Come for the tools - stay for the network (Chris Dixon)
+
+Triple token model:
+- Network token or transaction token as a stable coin or pegged to a stable coin
+- Utility reward token
+- Governance token or equity token for DAO participation
+
+https://hackernoon.com/the-dexfreight-platform-business-model-and-triple-token-model-d35ea853a264
+
+Vision
+Goals

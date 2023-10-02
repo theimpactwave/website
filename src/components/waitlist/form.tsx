@@ -69,33 +69,6 @@ const WaitlistForm = () => {
       .finally(() => {
         setIsSubmitting(false);
       });
-
-    /*jsonp(
-      `${subscribeUrl}&EMAIL=${values.waitlist_email}&UNAME=${values.waitlist_name}`,
-      { param: "c", timeout: 10000 },
-      (err) => {
-        alert(err);
-        setIsSubmitting(false);
-        if (err) {
-          toast({
-            title: "Sorry that did not work",
-            status: "error",
-            duration: 7000,
-            isClosable: true,
-            position: "top",
-          });
-        } else {
-          toast({
-            title: "Thank you!",
-            description: "Once the wait is over we will notify you",
-            status: "success",
-            duration: 7000,
-            isClosable: true,
-            position: "top",
-          });
-        }
-      },
-    );*/
   };
 
   return (

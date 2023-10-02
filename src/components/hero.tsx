@@ -34,6 +34,7 @@ const Hero = () => {
               <Heading
                 as={"h1"}
                 fontSize={["24", "33", "50"]}
+                color={"white"}
                 sx={{
                   mb: 4,
                 }}

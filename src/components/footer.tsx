@@ -20,11 +20,11 @@ const Footer = (props: BoxProps) => {
           justifyContent={"space-between"}
           alignItems={"center"}
           p={4}
-          bg={"secondary"}
+          bg={"silver"}
           color={"black"}
         >
           <Box fontSize={14}>
-            <Logo width={150} reverse />
+            <Logo width={100} />
           </Box>
           <Box fontSize={14}>
             <Link href={"mailto:team@theimpactwave.org"}>
@@ -38,7 +38,6 @@ const Footer = (props: BoxProps) => {
           justifyContent={"center"}
           alignItems={"center"}
           p={4}
-          color={"white"}
           fontSize={12}
         >
           <Text>&copy; 2023 The Impact Wave</Text>

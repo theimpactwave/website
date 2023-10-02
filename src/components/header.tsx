@@ -24,7 +24,10 @@ const Header = (props: BoxProps) => {
           <Logo />
         </Box>
         <Box>
-          <WaitlistButton size={["xs", "sm", "md"]} />
+          <WaitlistButton
+            colorScheme={"tertiaryScheme"}
+            size={["xs", "sm", "md"]}
+          />
         </Box>
       </Stack>
       {children}

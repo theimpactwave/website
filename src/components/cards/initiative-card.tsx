@@ -22,7 +22,6 @@ const InitiativeCard = (props: InitiativeCardProps) => {
             justifyContent={"center"}
             alignItems={"center"}
             width={"100%"}
-            color={"white !important"}
             mb={4}
             sx={{
               "& img": {
@@ -41,7 +40,13 @@ const InitiativeCard = (props: InitiativeCardProps) => {
           >
             {name}
           </Heading>
-          <Text textAlign={"center"} color={"brand"} fontSize={14} mb={4}>
+          <Text
+            textAlign={"center"}
+            color={"brand"}
+            fontSize={14}
+            fontWeight={700}
+            mb={4}
+          >
             {organisation}
           </Text>
           <Box
@@ -50,7 +55,6 @@ const InitiativeCard = (props: InitiativeCardProps) => {
             justifyContent={"center"}
             alignItems={"center"}
             width={"100%"}
-            color={"white !important"}
             mb={8}
             sx={{
               "& img": {

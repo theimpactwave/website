@@ -17,7 +17,7 @@ const Logo = (props: LogoProps) => {
         <Image
           src={reverse ? BrandLogoReverse : BrandLogo}
           alt={"The Impact Wave"}
-          width={200}
+          width={120}
           {...rest}
         />
       </Link>

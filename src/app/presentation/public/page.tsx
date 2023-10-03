@@ -6,11 +6,11 @@ import DefaultLayout from "@/layouts/default";
 import WaitlistButton from "@/components/waitlist/button";
 
 export const metadata: Metadata = {
-  title: "The Impact Wave - Public Survey",
+  title: "The Impact Wave - Public Presentation",
   description: "The Impact Wave - Unleash Your Generosity, Amplify Your Impact",
 };
 
-const SurveysPublic = () => {
+const PresentationPublic = () => {
   return (
     <>
       <main>
@@ -64,4 +64,4 @@ const SurveysPublic = () => {
   );
 };
 
-export default SurveysPublic;
+export default PresentationPublic;

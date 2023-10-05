@@ -16,11 +16,13 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 import Image from "next/image";
+import { useEffect } from "react";
 
 import Calendly from "@/components/calendly";
 import CircleNumber from "@/components/circle-number";
 import Container from "@/components/container";
 import Hairline from "@/components/hairline";
+import MixerModal from "@/components/mixer/modal";
 import WaitlistBar from "@/components/waitlist/bar";
 import Initiatives from "@/modules/home/initiatives";
 import Meetus from "@/modules/home/meetus";
@@ -28,10 +30,31 @@ import HomeTeaser from "@/modules/home/teaser";
 
 const HomePage = () => {
   const { isOpen, onClose, onOpen } = useDisclosure();
+  const mixerModal = useDisclosure();
 
   const onImageClickHandler = () => {
     onOpen();
   };
+
+  useEffect(() => {
+    const onHashChangeHandler = (event: HashChangeEvent) => {
+      event.preventDefault();
+      if (/\/?#demo/gi.test(window.location.href)) {
+        window.history.pushState({}, "", "/");
+        mixerModal.onOpen();
+      }
+    };
+    if (typeof window !== "undefined") {
+      if (/\/?#demo/gi.test(window.location.href)) {
+        window.history.replaceState({}, "", "/");
+        window.dispatchEvent(new HashChangeEvent("hashchange"));
+      }
+    }
+    window.addEventListener("hashchange", onHashChangeHandler);
+    return () => {
+      window.removeEventListener("hashchange", onHashChangeHandler);
+    };
+  }, [mixerModal]);
 
   return (
     <Box px={4}>
@@ -241,6 +264,7 @@ const HomePage = () => {
           </ModalBody>
         </ModalContent>
       </Modal>
+      <MixerModal isOpen={mixerModal.isOpen} onClose={mixerModal.onClose} />
     </Box>
   );
 };

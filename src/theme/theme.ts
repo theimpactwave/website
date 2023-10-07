@@ -1,6 +1,29 @@
 import type { Theme } from "@chakra-ui/react";
-import { createMultiStyleConfigHelpers, extendTheme } from "@chakra-ui/react";
+import {
+  createMultiStyleConfigHelpers,
+  defineStyleConfig,
+  extendTheme,
+} from "@chakra-ui/react";
 import { mode } from "@chakra-ui/theme-tools";
+
+const TextStyles = defineStyleConfig({
+  baseStyle: {
+    fontSize: [16, 18, 18],
+    letterSpacing: 0.1,
+  },
+});
+
+const LinkStyles = defineStyleConfig({
+  baseStyle: {
+    fontSize: [16, 18, 18],
+  },
+});
+
+const HeadingStyles = defineStyleConfig({
+  baseStyle: {
+    fontWeight: 700,
+  },
+});
 
 const CardHelpers = createMultiStyleConfigHelpers(["container"]);
 const CardStyles = CardHelpers.defineMultiStyleConfig({
@@ -86,8 +109,8 @@ const theme = {
     }),
   },
   fonts: {
-    heading: `'Crimson', sans-serif`,
-    body: `'Inter', sans-serif`,
+    heading: `'Montserrat', sans-serif`,
+    body: `'Open Sans', sans-serif`,
   },
   colors: {
     brand: "#5DBD77",
@@ -97,6 +120,7 @@ const theme = {
     quaternary: "#71c2cb",
     silver: "#E8E8E9",
     red: "#BD5D64",
+    black: "#003333",
     brandScheme: {
       100: "#5DBD77",
       200: "#5DBD77",
@@ -143,6 +167,9 @@ const theme = {
     },
   },
   components: {
+    Text: TextStyles,
+    Link: LinkStyles,
+    Heading: HeadingStyles,
     Card: CardStyles,
     Modal: ModalStyles,
     Input: InputStyles,

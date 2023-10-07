@@ -24,10 +24,13 @@ const Footer = (props: BoxProps) => {
           color={"black"}
         >
           <Box fontSize={14}>
-            <Logo width={100} />
+            <Logo width={120} />
           </Box>
-          <Box fontSize={14}>
-            <Link href={"mailto:team@theimpactwave.org"}>
+          <Box>
+            <Link
+              href={"mailto:team@theimpactwave.org"}
+              fontSize={[14, 16, 16]}
+            >
               team@theimpactwave.org
             </Link>
           </Box>
@@ -38,17 +41,20 @@ const Footer = (props: BoxProps) => {
           justifyContent={"center"}
           alignItems={"center"}
           p={4}
-          fontSize={12}
         >
-          <Text>&copy; 2023 The Impact Wave</Text>
+          <Text fontSize={14}>&copy; 2023 The Impact Wave</Text>
           <Hide below={"sm"}>
             <Text>&#124;</Text>
           </Hide>
-          <Link href={"/terms"}>Terms of use</Link>
+          <Link href={"/terms"} fontSize={14}>
+            Terms of use
+          </Link>
           <Hide below={"sm"}>
             <Text>&#124;</Text>
           </Hide>
-          <Link href={"/privacy"}>Privacy policy</Link>
+          <Link href={"/privacy"} fontSize={14}>
+            Privacy policy
+          </Link>
         </Stack>
       </Box>
     </>

@@ -10,16 +10,16 @@ import {
   ModalOverlay,
 } from "@chakra-ui/react";
 
-import WaitlistForm from "@/components/waitlist/form";
+import Mixer from "@/components/mixer/mixer";
 
-export interface WaitlistModalProps extends Omit<ModalProps, "children"> {}
+export interface MixerModalProps extends Omit<ModalProps, "children"> {}
 
-const WaitlistModal = (props: WaitlistModalProps) => {
+const MixerModal = (props: MixerModalProps) => {
   const { isOpen, onClose } = props;
 
   return (
     <Modal
-      size={["md", "lg", "xl"]}
+      size={"full"}
       isOpen={isOpen}
       onClose={onClose}
       closeOnOverlayClick={true}
@@ -29,14 +29,14 @@ const WaitlistModal = (props: WaitlistModalProps) => {
     >
       <ModalOverlay />
       <ModalContent>
-        <ModalHeader pt={10}>Join our Waitlist</ModalHeader>
+        <ModalHeader pt={10}>Demo</ModalHeader>
         <ModalCloseButton />
         <ModalBody mb={10}>
-          <WaitlistForm />
+          <Mixer />
         </ModalBody>
       </ModalContent>
     </Modal>
   );
 };
 
-export default WaitlistModal;
+export default MixerModal;

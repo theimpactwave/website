@@ -16,11 +16,13 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 import Image from "next/image";
+import { useEffect } from "react";
 
 import Calendly from "@/components/calendly";
 import CircleNumber from "@/components/circle-number";
 import Container from "@/components/container";
 import Hairline from "@/components/hairline";
+import MixerModal from "@/components/mixer/modal";
 import WaitlistBar from "@/components/waitlist/bar";
 import Initiatives from "@/modules/home/initiatives";
 import Meetus from "@/modules/home/meetus";
@@ -28,33 +30,38 @@ import HomeTeaser from "@/modules/home/teaser";
 
 const HomePage = () => {
   const { isOpen, onClose, onOpen } = useDisclosure();
+  const mixerModal = useDisclosure();
 
   const onImageClickHandler = () => {
     onOpen();
   };
 
+  useEffect(() => {
+    const onHashChangeHandler = (event: HashChangeEvent) => {
+      event.preventDefault();
+      if (/\/?#demo/gi.test(window.location.href)) {
+        window.history.pushState({}, "", "/");
+        mixerModal.onOpen();
+      }
+    };
+    if (typeof window !== "undefined") {
+      if (/\/?#demo/gi.test(window.location.href)) {
+        window.history.replaceState({}, "", "/");
+        window.dispatchEvent(new HashChangeEvent("hashchange"));
+      }
+    }
+    window.addEventListener("hashchange", onHashChangeHandler);
+    return () => {
+      window.removeEventListener("hashchange", onHashChangeHandler);
+    };
+  }, [mixerModal]);
+
   return (
-    <Box px={4}>
+    <Box>
       <Container>
-        <Heading
-          as={"h3"}
-          textAlign={"center"}
-          mb={2}
-          color={"brand"}
-          fontWeight={700}
-        >
-          Welcome
-        </Heading>
-        <Heading
-          as={"h4"}
-          fontSize={[20, 24, 24]}
-          fontWeight={400}
-          textAlign={"center"}
-          mb={12}
-        >
-          Welcome to The Impact Wave: Empower Your Giving. Discover handpicked
-          causes, effortless funding, and transparent impact. Join our community
-          and make every contribution count.
+        <Heading as={"h2"} textAlign={"center"} mb={12}>
+          Effortlessly fund causes that matter to you. Customize your impact mix
+          and see your money in action.
         </Heading>
         <Hairline />
         <Box mb={12} />
@@ -62,7 +69,7 @@ const HomePage = () => {
         <Box mb={12} />
       </Container>
       <WaitlistBar />
-      <Box mb={12} />
+      <Box mb={16} />
       <Container>
         <Stack
           direction={["column", "column", "row"]}
@@ -75,31 +82,26 @@ const HomePage = () => {
               We continuously invest in the most impactful initiatives for you.
             </Heading>
             <Text mb={4} fontWeight={700}>
-              Here is how it works:
+              How It Works:
             </Text>
             <Stack direction={"column"} gap={5}>
               <Stack direction={"row"} alignItems={"baseline"} spacing={4}>
                 <CircleNumber number={1} />
                 <Text flex={1}>
-                  Register on theimpactwave.org and either follow our impact
-                  influencers or simply start to make an impact by:
+                  Define Your Impact Vision: Choose causes close to your heart.
                 </Text>
               </Stack>
               <Stack direction={"row"} alignItems={"baseline"} spacing={4}>
                 <CircleNumber number={2} />
                 <Text flex={1}>
-                  Define where you want to spread your impact funding to. Select
-                  the domains you want to power. Make a one-time impact funding
-                  or set monthly recurring funding campaigns. Our Impact DAO
-                  distributes your fundings for the highest impact.
+                  Empower Initiatives: Support impactful curated initiatives
+                  directly.
                 </Text>
               </Stack>
               <Stack direction={"row"} alignItems={"baseline"} spacing={4}>
                 <CircleNumber number={3} />
                 <Text flex={1}>
-                  See your impact in action and get insides from your funding
-                  stream. See where your funding&apos;s have been distributed
-                  too and connect with their stories.
+                  Witness Real Change: See the proof of your impact.
                 </Text>
               </Stack>
             </Stack>
@@ -151,19 +153,14 @@ const HomePage = () => {
             </Box>
             <Box order={[0, 0, 1]} flex={[1, 1, "1 1 28%"]}>
               <Heading as={"h3"} mb={4}>
-                Transparent distribution of funds powered by blockchain
-                technology
+                Trust in Transparency, Fuel for Good
               </Heading>
-              <Text mb={4} fontWeight={700}>
-                Here is how it works:
-              </Text>
               <Text>
-                After you have defined how and where you want to spread your
-                funding the Impact DAO takes care of the fair distributions
-                amongst the eligible initiatives. The DAO calculates the payout
-                by transparent algorithms taking into accounts factors like
-                geography, size and stage of initiative, current initiative
-                impact curvea and AI powered impact evaluation.
+                Rest assured with our unwavering commitment to transparency.
+                Easily track and verify the tangible difference your
+                contributions are making. The Impact Wave meticulously allocates
+                your funds, ensuring continuous and substantial support for
+                initiatives that drive positive change.
               </Text>
             </Box>
           </Stack>
@@ -171,12 +168,16 @@ const HomePage = () => {
         <Box mb={12} />
         <Hairline />
         <Box mb={12} textAlign={"center"}>
-          <Heading>Meet some of our positive impact makers:</Heading>
+          <Heading mb={4}>Meet some of our positive impact makers:</Heading>
+          <Text>
+            Your investments drive real change. See where your money goes and
+            the difference it makes.
+          </Text>
         </Box>
         <Initiatives />
         <Box mb={12} />
         <Hairline />
-        <Box textAlign={"center"} width={"100%"}>
+        <Box mb={4} textAlign={"center"} width={"100%"}>
           <Heading
             as={"h4"}
             display={"inline-block"}
@@ -190,7 +191,11 @@ const HomePage = () => {
             continuously power sustainable impact initiatives.&rdquo;
           </Heading>
         </Box>
-        <Box mb={12} />
+        <Box mb={4} textAlign={"center"} width={"100%"}>
+          <Text>
+            Start making a difference today. Connect with us to learn more.
+          </Text>
+        </Box>
         <Box mb={12} textAlign={"center"}>
           <Button
             as={Link}
@@ -202,8 +207,38 @@ const HomePage = () => {
             Get in touch
           </Button>
         </Box>
-        <Box mb={12} />
-        <Hairline />
+      </Container>
+      <Box bg={"silver"}>
+        <Container>
+          <Box p={5}>
+            <Stack
+              direction={["column", "row"]}
+              spacing={4}
+              justifyContent={"space-between"}
+              alignItems={"center"}
+            >
+              <Heading
+                as={"h3"}
+                fontSize={[18, 22, 24]}
+                textAlign={["center", "left"]}
+              >
+                Meet us at the 2023 GatherVerse Founders Summit
+              </Heading>
+              <Link
+                href={
+                  "https://www.eventbrite.com/e/gatherverse-founders-summit-tickets-705581141187"
+                }
+              >
+                <Button variant={"solid"} colorScheme={"brandScheme"}>
+                  Get tickets
+                </Button>
+              </Link>
+            </Stack>
+          </Box>
+        </Container>
+      </Box>
+      <Box mb={16} />
+      <Container>
         <Box mb={12} textAlign={"center"}>
           <Heading>Lets talk - Meet us here:</Heading>
         </Box>
@@ -213,7 +248,7 @@ const HomePage = () => {
         <Box mb={12} textAlign={"center"}>
           <Heading mb={4}>Partners and Investors</Heading>
           <Text mb={4} fontWeight={700}>
-            Book a 30 min. meeting with us:
+            Book a meeting with us:
           </Text>
           <Calendly />
         </Box>
@@ -241,6 +276,7 @@ const HomePage = () => {
           </ModalBody>
         </ModalContent>
       </Modal>
+      <MixerModal isOpen={mixerModal.isOpen} onClose={mixerModal.onClose} />
     </Box>
   );
 };

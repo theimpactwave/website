@@ -43,6 +43,9 @@ const WaitlistButton = (props: WaitlistButtonProps) => {
         variant={"outline"}
         colorScheme={"brandScheme"}
         onClick={onButtonClickHandler}
+        sx={{
+          minW: 155,
+        }}
         {...rest}
       >
         Join our Waitlist

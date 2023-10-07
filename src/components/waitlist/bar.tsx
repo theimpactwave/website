@@ -14,9 +14,14 @@ const WaitlistBar = () => {
             justifyContent={"space-between"}
             alignItems={"center"}
           >
-            <Heading as={"h3"} color={"black"} textAlign={["center", "left"]}>
-              Get notified when we go live
+            <Heading
+              as={"h3"}
+              fontSize={[22, 24, 28]}
+              textAlign={["center", "left"]}
+            >
+              Join the Waitlist and ignite impact
             </Heading>
+
             <WaitlistButton variant={"solid"} />
           </Stack>
         </Box>

@@ -10,6 +10,7 @@ import {
 } from "@chakra-ui/react";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import CircleNotificationsIcon from "@mui/icons-material/CircleNotifications";
+import GradeIcon from "@mui/icons-material/Grade";
 import PersonIcon from "@mui/icons-material/Person";
 import RocketLaunchIcon from "@mui/icons-material/RocketLaunch";
 import SettingsIcon from "@mui/icons-material/Settings";
@@ -17,6 +18,7 @@ import Image from "next/image";
 
 import Hairline from "@/components/hairline";
 import Logo from "@/components/logo";
+import MixerUi from "@/components/mixer/ui";
 
 const Mixer = () => {
   return (
@@ -36,7 +38,14 @@ const Mixer = () => {
               <Text fontSize={"lg"} fontWeight={700} mb={4}>
                 Hello Frank
               </Text>
-              <Avatar name={"Frank Mueller"} />
+              <Avatar name={"Frank Mueller"} mb={4} />
+              <Box fontSize={"sm"} color={"secondary"}>
+                <Text as={"span"}>Your Balance:</Text>
+                <Text as={"span"} fontWeight={900}>
+                  {" "}
+                  $100
+                </Text>
+              </Box>
             </Box>
             <Box>
               <Hairline reverse />
@@ -45,7 +54,12 @@ const Mixer = () => {
               <List spacing={2}>
                 <ListItem>
                   <Button leftIcon={<RocketLaunchIcon />} width={"100%"}>
-                    Your impact
+                    Your Impact
+                  </Button>
+                </ListItem>
+                <ListItem>
+                  <Button leftIcon={<GradeIcon />} width={"100%"}>
+                    Impact Stories
                   </Button>
                 </ListItem>
                 <ListItem>
@@ -56,7 +70,7 @@ const Mixer = () => {
               </List>
             </Box>
           </Stack>
-          <Stack direction={"column"} width={"100%"}>
+          <Stack direction={"column"} width={"100%"} pl={8}>
             <Box
               display={"flex"}
               flexDirection={"column"}
@@ -106,6 +120,14 @@ const Mixer = () => {
                     size={"sm"}
                   />
                 </Stack>
+              </Box>
+            </Box>
+            <Box>
+              <Box>
+                <Text fontSize={"lg"} fontWeight={700} mb={8}>
+                  Your impact mix:
+                </Text>
+                <MixerUi />
               </Box>
             </Box>
           </Stack>

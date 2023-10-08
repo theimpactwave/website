@@ -16,6 +16,7 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 import Image from "next/image";
+import NextLink from "next/link";
 import { useEffect } from "react";
 
 import Calendly from "@/components/calendly";
@@ -248,6 +249,23 @@ const HomePage = () => {
         <Box mb={12} />
         <Hairline />
         <Box mb={12} textAlign={"center"}>
+          <Heading as={"h3"} fontSize={[24, 28, 32]} mb={4}>
+            Meet the team
+          </Heading>
+          <Text mb={4} fontWeight={700}>
+            90+ years of experiences making global and sustainable impact:
+          </Text>
+          <NextLink href={"/team"} title={"team"}>
+            <Button
+              variant={"outline"}
+              colorScheme={"secondaryScheme"}
+              minW={140}
+            >
+              Team
+            </Button>
+          </NextLink>
+          <Box mb={16} />
+          <Hairline />
           <Heading as={"h3"} fontSize={[24, 28, 32]} mb={4}>
             Partners and Investors
           </Heading>

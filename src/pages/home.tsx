@@ -59,7 +59,7 @@ const HomePage = () => {
   return (
     <Box>
       <Container>
-        <Heading as={"h2"} textAlign={"center"} mb={12}>
+        <Heading as={"h2"} fontSize={[22, 24, 28]} textAlign={"center"} mb={12}>
           Effortlessly fund causes that matter to you. Customize your impact mix
           and see your money in action.
         </Heading>
@@ -78,7 +78,7 @@ const HomePage = () => {
           alignItems={"top"}
         >
           <Box flex={[1, 1, "1 1 35%"]}>
-            <Heading as={"h3"} mb={4}>
+            <Heading as={"h3"} fontSize={[24, 28, 32]} mb={4}>
               We continuously invest in the most impactful initiatives for you.
             </Heading>
             <Text mb={4} fontWeight={700}>
@@ -152,7 +152,7 @@ const HomePage = () => {
               />
             </Box>
             <Box order={[0, 0, 1]} flex={[1, 1, "1 1 28%"]}>
-              <Heading as={"h3"} mb={4}>
+              <Heading as={"h3"} fontSize={[24, 28, 32]} mb={4}>
                 Trust in Transparency, Fuel for Good
               </Heading>
               <Text>
@@ -168,7 +168,9 @@ const HomePage = () => {
         <Box mb={12} />
         <Hairline />
         <Box mb={12} textAlign={"center"}>
-          <Heading mb={4}>Meet some of our positive impact makers:</Heading>
+          <Heading as={"h3"} fontSize={[24, 28, 32]} mb={4}>
+            Meet some of our positive impact makers:
+          </Heading>
           <Text>
             Your investments drive real change. See where your money goes and
             the difference it makes.
@@ -239,14 +241,16 @@ const HomePage = () => {
       </Box>
       <Box mb={16} />
       <Container>
-        <Box mb={12} textAlign={"center"}>
+        <Box as={"h3"} mb={12} fontSize={[24, 28, 32]} textAlign={"center"}>
           <Heading>Lets talk - Meet us here:</Heading>
         </Box>
         <Meetus />
         <Box mb={12} />
         <Hairline />
         <Box mb={12} textAlign={"center"}>
-          <Heading mb={4}>Partners and Investors</Heading>
+          <Heading as={"h3"} fontSize={[24, 28, 32]} mb={4}>
+            Partners and Investors
+          </Heading>
           <Text mb={4} fontWeight={700}>
             Book a meeting with us:
           </Text>

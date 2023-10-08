@@ -24,7 +24,13 @@ const TeaserCard = (props: TeaserCardProps) => {
           >
             <Image src={icon} alt={""} width={50} height={50} />
           </Box>
-          <Heading as={"h2"} fontSize={[26, 28, 30]} mb={4} fontWeight={400}>
+          <Heading
+            as={"h2"}
+            fontSize={[24, 26, 28]}
+            mb={4}
+            fontWeight={500}
+            textAlign={"center"}
+          >
             {header}
           </Heading>
           <Text>{content}</Text>

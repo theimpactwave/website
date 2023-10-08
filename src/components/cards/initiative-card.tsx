@@ -34,9 +34,9 @@ const InitiativeCard = (props: InitiativeCardProps) => {
           <Heading
             as={"h2"}
             textAlign={"center"}
-            fontSize={[26, 28, 30]}
+            fontSize={[24, 26, 28]}
             mb={1}
-            fontWeight={400}
+            fontWeight={500}
           >
             {name}
           </Heading>

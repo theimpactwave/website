@@ -9,8 +9,9 @@ const Hero = () => {
       <Box
         sx={{
           position: "relative",
-          height: [240, 300, 400],
+          height: [280, 320, 400],
         }}
+        mb={16}
       >
         <Box
           display={"flex"}
@@ -24,16 +25,17 @@ const Hero = () => {
             <Box
               sx={{
                 position: "relative",
-                top: ["12%", "18%", "20%"],
-                left: ["5%", "5%", "2%"],
-                maxW: [370, 500, 600],
+                top: ["18%", "25%", "38%"],
+                left: ["4%", "3%", "2%"],
+                maxW: [370, 460, 725],
                 bg: "rgba(0,0,0,.4)",
                 p: 8,
+                borderRadius: 10,
               }}
             >
               <Heading
                 as={"h1"}
-                fontSize={["24", "33", "50"]}
+                fontSize={["23", "30", "42"]}
                 color={"white"}
                 sx={{
                   mb: 4,

@@ -22,8 +22,8 @@ export interface MeetusCardProps extends Omit<CardProps, "content"> {
 const MeetusCard = (props: MeetusCardProps) => {
   const { link, header, content, image, date, ...rest } = props;
   return (
-    <LinkBox>
-      <Card variant={"outline"} {...rest}>
+    <LinkBox height={"100%"}>
+      <Card variant={"outline"} height={"100%"} {...rest}>
         <CardBody>
           <LinkOverlay href={link}>
             <Box

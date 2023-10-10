@@ -26,6 +26,25 @@ const Meetus = () => {
           }
         />
         <MeetusCard
+          link={"https://arabfintechforum.com/"}
+          image={"/images/meetus-teaser5.jpg"}
+          header={"Arab FinTech Forum"}
+          date={"11OCT, 2023"}
+          content={
+            <>
+              <Text as={"span"}>Exclusive forum talk with our co-founder </Text>
+              <Link href={"https://www.linkedin.com/in/abhib3012/"}>
+                Abhishek Bhattachary
+              </Link>
+              <Text as={"span"}>
+                {" "}
+                about financial inclusion and our &quot;The Impact Waves&quot;
+                goals
+              </Text>
+            </>
+          }
+        />
+        <MeetusCard
           link={"https://blockchainfestival.asia/"}
           image={"/images/meetus-teaser3.jpg"}
           header={"FinTech Festival Thailand"}
@@ -33,7 +52,7 @@ const Meetus = () => {
           content={
             <>
               <Text as={"span"}>Our co-founder </Text>
-              <Link href={" https://www.linkedin.com/in/abhib3012/"}>
+              <Link href={"https://www.linkedin.com/in/abhib3012/"}>
                 Abhishek Bhattachary
               </Link>
               <Text as={"span"}>

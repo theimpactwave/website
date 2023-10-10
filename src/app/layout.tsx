@@ -13,6 +13,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <Script
+        id="termly"
+        strategy="afterInteractive"
+        src="https://app.termly.io/embed.min.js"
+        data-auto-block="on"
+        data-website-uuid="56e7646d-9e77-49c7-8838-0eb3b4bfe2f8"
+      />
+      <Script
+        id="google-tag-manager"
         strategy="afterInteractive"
         src="https://www.googletagmanager.com/gtag/js?id=G-26CF3WVPNS"
       />

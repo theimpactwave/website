@@ -55,6 +55,12 @@ const Footer = (props: BoxProps) => {
           <Link href={"/privacy"} fontSize={14}>
             Privacy policy
           </Link>
+          <Hide below={"sm"}>
+            <Text>&#124;</Text>
+          </Hide>
+          <Link href={"/cookies"} fontSize={14}>
+            Cookie policy
+          </Link>
         </Stack>
       </Box>
     </>

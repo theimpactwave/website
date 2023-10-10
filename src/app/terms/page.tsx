@@ -435,22 +435,18 @@ const Terms = () => {
   `;
 
   return (
-    <>
-      <main>
-        <DefaultLayout>
-          <Container
-            sx={{
-              p: { mb: 4 },
-            }}
-          >
-            <Heading as={"h1"} mb={8}>
-              Terms of use
-            </Heading>
-            <div dangerouslySetInnerHTML={{ __html: html }} />
-          </Container>
-        </DefaultLayout>
-      </main>
-    </>
+    <DefaultLayout>
+      <Container
+        sx={{
+          p: { mb: 4 },
+        }}
+      >
+        <Heading as={"h1"} mb={8}>
+          Terms of use
+        </Heading>
+        <div dangerouslySetInnerHTML={{ __html: html }} />
+      </Container>
+    </DefaultLayout>
   );
 };
 

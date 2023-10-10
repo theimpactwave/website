@@ -5,7 +5,7 @@ import { Button, useDisclosure } from "@chakra-ui/react";
 import { useEffect } from "react";
 
 import WaitlistModal from "@/components/waitlist/modal";
-import { triggerWaitlist } from "@/utils/trigger-waitlist";
+import { triggerWaitlist } from "@/lib/utils/trigger-waitlist";
 
 export interface WaitlistButtonProps extends ButtonProps {}
 

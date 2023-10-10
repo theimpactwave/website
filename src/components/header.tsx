@@ -1,4 +1,5 @@
-import { Box, type BoxProps, Stack } from "@chakra-ui/react";
+import { Box, type BoxProps, Button, Stack } from "@chakra-ui/react";
+import Link from "next/link";
 
 import Logo from "@/components/logo";
 import WaitlistButton from "@/components/waitlist/button";
@@ -24,10 +25,17 @@ const Header = (props: BoxProps) => {
           <Logo />
         </Box>
         <Box>
-          <WaitlistButton
-            colorScheme={"tertiaryScheme"}
-            size={["xs", "sm", "md"]}
-          />
+          <Stack direction={"row"} spacing={4}>
+            <WaitlistButton
+              colorScheme={"tertiaryScheme"}
+              size={["xs", "sm", "md"]}
+            />
+            <Link href={"/onboarding"}>
+              <Button variant={"outline"} colorScheme={"brandScheme"}>
+                Onboard Initiative
+              </Button>
+            </Link>
+          </Stack>
         </Box>
       </Stack>
       {children}

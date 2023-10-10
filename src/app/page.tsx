@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 import DefaultLayout from "@/layouts/default";
-import HomePage from "@/pages/home";
+import HomePage from "@/pages/home-page";
 
 export const metadata: Metadata = {
   title: "Welcome to The Impact Wave",
@@ -10,13 +10,9 @@ export const metadata: Metadata = {
 
 const Home = () => {
   return (
-    <>
-      <main>
-        <DefaultLayout>
-          <HomePage />
-        </DefaultLayout>
-      </main>
-    </>
+    <DefaultLayout>
+      <HomePage />
+    </DefaultLayout>
   );
 };
 

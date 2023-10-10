@@ -88,13 +88,64 @@ const InputStyles = InputHelpers.defineMultiStyleConfig({
       field: {
         color: "black",
         borderColor: "gray.500",
+        _hover: {
+          borderColor: "gray.500",
+        },
       },
     }),
   },
 });
 
+const RadioHelpers = createMultiStyleConfigHelpers(["control"]);
+const RadioStyles = RadioHelpers.defineMultiStyleConfig({
+  baseStyle: {
+    control: {
+      bg: "silver",
+    },
+  },
+});
+
+const FormHelpers = createMultiStyleConfigHelpers(["helperText"]);
+const FormStyles = FormHelpers.defineMultiStyleConfig({
+  baseStyle: {
+    helperText: {
+      color: "black",
+    },
+  },
+});
+
+const SelectHelpers = createMultiStyleConfigHelpers(["field"]);
+const SelectStyles = SelectHelpers.defineMultiStyleConfig({
+  baseStyle: {
+    field: {
+      _focus: {
+        border: "1px solid",
+        borderColor: "var(--tiw-colors-gray-500) !important",
+      },
+      _hover: {
+        border: "1px solid",
+        borderColor: "var(--tiw-colors-gray-500) !important",
+      },
+    },
+  },
+});
+
+const TextareaStyles = defineStyleConfig({
+  baseStyle: {
+    borderColor: "var(--tiw-colors-gray-500) !important",
+    _focus: {
+      border: "1px solid",
+      borderColor: "var(--tiw-colors-gray-500) !important",
+    },
+    _hover: {
+      border: "1px solid",
+      borderColor: "var(--tiw-colors-gray-500) !important",
+    },
+  },
+});
+
 const theme = {
-  initialColorMode: "dark",
+  initialColorMode: "light",
   useSystemColorMode: false,
   config: {
     cssVarPrefix: "tiw",
@@ -167,6 +218,14 @@ const theme = {
       900: "#71c2cb",
     },
   },
+  fontSizes: {
+    h6: "1rem",
+    h5: "1.15rem",
+    h4: "1.35rem",
+    h3: "1.65rem",
+    h2: "2rem",
+    h1: "2.25rem",
+  },
   components: {
     Text: TextStyles,
     Link: LinkStyles,
@@ -174,6 +233,10 @@ const theme = {
     Card: CardStyles,
     Modal: ModalStyles,
     Input: InputStyles,
+    Radio: RadioStyles,
+    Form: FormStyles,
+    Textarea: TextareaStyles,
+    Select: SelectStyles,
   },
 };
 

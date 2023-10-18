@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
-import Container from "@/components/container";
 import DefaultLayout from "@/layouts/default";
+import DemoPage from "@/pages/demo-page";
 
 export const metadata: Metadata = {
   title: "The Impact Wave - Demo",
@@ -9,14 +9,11 @@ export const metadata: Metadata = {
 };
 
 const Demo = () => {
-
   return (
     <>
       <main>
         <DefaultLayout>
-          <Container>
-            Demo
-          </Container>
+          <DemoPage />
         </DefaultLayout>
       </main>
     </>

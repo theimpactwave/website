@@ -23,9 +23,7 @@ const Fundme = () => {
           organisation={"Welt-Weit "}
           avatarImage={"/images/initiatives/lillian-kanjadza.jpeg"}
           initiativeImage={"/images/initiatives/agronet-initiative.png"}
-          excerpt={
-            "Rukayya Mahe is a single entrepreneur"
-          }
+          excerpt={"Rukayya Mahe is a single entrepreneur"}
           userAddress={"0xcb811e9426cd3d32fde9b6d8f7c6635c96f1d6a0"}
         />
       </SimpleGrid>

@@ -17,12 +17,12 @@ export function Providers({ children }: { children: React.ReactNode }) {
 
   return (
     <CacheProvider>
-      <MetaMaskProvider debug={true} sdkOptions={metaMaskOptions}>
+      {/* <MetaMaskProvider debug={true} sdkOptions={metaMaskOptions}> */}
         <ChakraProvider theme={getTheme()}>
           <ColorModeScript initialColorMode={"dark"} />
           {children}
         </ChakraProvider>
-      </MetaMaskProvider>
+      {/* </MetaMaskProvider> */}
     </CacheProvider>
   );
 }

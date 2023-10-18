@@ -15,6 +15,7 @@ const Fundme = () => {
           excerpt={
             "Lillian stands as a dedicated and visionary sustainable serial entrepreneur, driven by her mission to foster positive social change. At present, she leads with distinction as the founder of both Lillie Organics and Agronet Global Inc."
           }
+          userAddress={"0x78B9151cA6367E34130Aa3238D1c349B12fE978E"}
         />
       </SimpleGrid>
     </>

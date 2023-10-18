@@ -15,7 +15,7 @@ const Fundme = () => {
           excerpt={
             "The establishment of community seed banks in Manuhing Raya "
           }
-          userAddress={"0x0c2d27ccb3f37693cd02cd171bdbc38dbce01472"}
+          userAddress={"0x0c2d27ccb3f37693cd02cd171bdbc38dbce01472"} //receiver wallet address
         />
         <FundmeCard
           id={1}

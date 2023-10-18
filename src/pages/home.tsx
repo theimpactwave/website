@@ -1,6 +1,9 @@
 "use client";
 
 import {
+  Alert,
+  AlertIcon,
+  AlertTitle,
   Box,
   Button,
   Heading,
@@ -17,7 +20,7 @@ import {
 } from "@chakra-ui/react";
 import Image from "next/image";
 import NextLink from "next/link";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 import Calendly from "@/components/calendly";
 import CircleNumber from "@/components/circle-number";
@@ -25,17 +28,26 @@ import Container from "@/components/container";
 import Hairline from "@/components/hairline";
 import MixerModal from "@/components/mixer/modal";
 import WaitlistBar from "@/components/waitlist/bar";
+import Fundme from "@/modules/home/fundme";
 import Initiatives from "@/modules/home/initiatives";
 import Meetus from "@/modules/home/meetus";
 import HomeTeaser from "@/modules/home/teaser";
-
 const HomePage = () => {
   const { isOpen, onClose, onOpen } = useDisclosure();
   const mixerModal = useDisclosure();
+  const [inBeta, setInBeta] = useState<boolean>(false);
 
   const onImageClickHandler = () => {
     onOpen();
   };
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      if (/\/?#beta/gi.test(window.location.href)) {
+        setInBeta(true);
+      }
+    }
+  }, [setInBeta]);
 
   useEffect(() => {
     const onHashChangeHandler = (event: HashChangeEvent) => {
@@ -180,6 +192,24 @@ const HomePage = () => {
         <Initiatives />
         <Box mb={12} />
         <Hairline />
+        {inBeta && (
+          <>
+            <Heading as={"h3"} fontSize={[24, 28, 32]} mb={4}>
+              Fund some of our Initiatives directly (BETA)
+            </Heading>
+            <Alert status={"info"}>
+              <AlertIcon />
+              <AlertTitle>
+                NOTE!: This is a BETA test with MetaMask to test the transaction
+                flow to our receivers
+              </AlertTitle>
+            </Alert>
+            <Box mb={12} />
+            <Fundme />
+            <Box mb={12} />
+            <Hairline />
+          </>
+        )}
         <Box mb={4} textAlign={"center"} width={"100%"}>
           <Heading
             as={"h4"}

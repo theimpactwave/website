@@ -8,14 +8,25 @@ const Fundme = () => {
       <SimpleGrid columns={[1, 1, 3]} spacing={8}>
         <FundmeCard
           id={1}
-          name={"Lillian Kanjadza"}
-          organisation={"Agronet Global Inc."}
+          name={"Standy Christianto"}
+          organisation={"The Borneo institute."}
           avatarImage={"/images/initiatives/lillian-kanjadza.jpeg"}
           initiativeImage={"/images/initiatives/agronet-initiative.png"}
           excerpt={
-            "Lillian stands as a dedicated and visionary sustainable serial entrepreneur, driven by her mission to foster positive social change. At present, she leads with distinction as the founder of both Lillie Organics and Agronet Global Inc."
+            "The establishment of community seed banks in Manuhing Raya "
           }
-          userAddress={"0x78B9151cA6367E34130Aa3238D1c349B12fE978E"}
+          userAddress={"0x0c2d27ccb3f37693cd02cd171bdbc38dbce01472"}
+        />
+        <FundmeCard
+          id={1}
+          name={"Rukayya Mahe"}
+          organisation={"Welt-Weit "}
+          avatarImage={"/images/initiatives/lillian-kanjadza.jpeg"}
+          initiativeImage={"/images/initiatives/agronet-initiative.png"}
+          excerpt={
+            "Rukayya Mahe is a single entrepreneur"
+          }
+          userAddress={"0xcb811e9426cd3d32fde9b6d8f7c6635c96f1d6a0"}
         />
       </SimpleGrid>
     </>

@@ -123,7 +123,7 @@ const FundmeCard = (props: FundmeCardProps) => {
 
   const address = useAddress();
   const signer = useSigner();
-  const [amount, setAmount] = useState<number>(0);
+  const [amount, setAmount] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
   const [approvedBalance, setApprovedBalance] = useState<number>(0);
 
@@ -200,7 +200,7 @@ const FundmeCard = (props: FundmeCardProps) => {
       isClosable: true,
       position: "top",
     });
-    setAmount(0);
+    setAmount("");
     setLoading(false);
   };
 
@@ -302,7 +302,7 @@ const FundmeCard = (props: FundmeCardProps) => {
                 style={{ color: "white" }}
                 value={amount}
                 onChange={(e) => {
-                  setAmount(parseInt(e.target.value));
+                  setAmount(e.target.value);
                 }}
                 disabled={loading}
               />

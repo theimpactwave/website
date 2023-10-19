@@ -23,6 +23,7 @@ export const donate = async (userAddress, saleAddress, signer, amount) => {
         })
         .catch((err) => {
           console.log("%c Line:67 🌶 err", "color:#e41a6a", err);
+          resolve(false);
         });
     } catch (error) {
       console.log("%c Line:62 🍬 error", "color:#465975", error);

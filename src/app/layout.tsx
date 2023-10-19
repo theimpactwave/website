@@ -33,6 +33,11 @@ export default function RootLayout({
           gtag('config', 'G-26CF3WVPNS');
         `}
       </Script>
+      <Script
+        id="paypal-donate"
+        src="https://www.paypalobjects.com/donate/sdk/donate-sdk.js"
+        strategy="afterInteractive"
+      />
       <head>
         <link
           rel="apple-touch-icon"

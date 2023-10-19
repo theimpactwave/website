@@ -67,8 +67,8 @@ const DemoPage = () => {
             },
           ],
         })
-        .then((txHash) => console.log(txHash))
-        .catch((error) => console.error(error));
+        .then((txHash: any) => console.log(txHash))
+        .catch((error: any) => console.error(error));
     }
   };
 

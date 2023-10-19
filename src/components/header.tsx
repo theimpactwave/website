@@ -1,10 +1,11 @@
 "use client";
 
 import { Box, type BoxProps, Stack } from "@chakra-ui/react";
+import { ConnectWallet } from "@thirdweb-dev/react";
+import { useEffect, useState } from "react";
+
 import Logo from "@/components/logo";
 import WaitlistButton from "@/components/waitlist/button";
-import {useEffect, useState} from "react";
-import {ConnectWallet} from "@thirdweb-dev/react";
 
 const Header = (props: BoxProps) => {
   const { children } = props;
@@ -37,13 +38,25 @@ const Header = (props: BoxProps) => {
         <Box>
           <Logo />
         </Box>
-        <Box>
-          {inBeta && <ConnectWallet />}
+        <Stack spacing={2}>
+          {inBeta && (
+            <ConnectWallet
+              style={{
+                height: 32,
+                color: "#264494",
+                background: "none",
+                border: "1px solid #264494",
+                borderRadius: "6px",
+                fontSize: "15px",
+                fontWeight: 700,
+              }}
+            />
+          )}
           <WaitlistButton
             colorScheme={"tertiaryScheme"}
             size={["xs", "sm", "md"]}
           />
-        </Box>
+        </Stack>
       </Stack>
       {children}
     </Box>

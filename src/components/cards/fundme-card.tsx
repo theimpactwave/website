@@ -16,10 +16,8 @@ import { useEffect, useState } from "react";
 import { config } from "@//config";
 import { donate } from "@//utility/donate";
 import { approveToken, getTokenAllowance } from "@//utility/token";
-type idAddressMappingType = { id: number; address: string };
 
 export interface FundmeCardProps extends Omit<CardProps, "id" | "content"> {
-  id: number;
   avatarImage: string;
   initiativeImage: string;
   name: string;
@@ -30,7 +28,6 @@ export interface FundmeCardProps extends Omit<CardProps, "id" | "content"> {
 
 const FundmeCard = (props: FundmeCardProps) => {
   const {
-    id,
     name,
     organisation,
     avatarImage,
@@ -126,9 +123,9 @@ const FundmeCard = (props: FundmeCardProps) => {
 
   const address = useAddress();
   const signer = useSigner();
-  const [amount, setAmount] = useState("");
-  const [loading, setLoading] = useState(false);
-  const [approvedBalance, setApprovedBalance] = useState(0);
+  const [amount, setAmount] = useState<number>(0);
+  const [loading, setLoading] = useState<boolean>(false);
+  const [approvedBalance, setApprovedBalance] = useState<number>(0);
 
   useEffect(() => {
     if (!address || !signer) return;
@@ -296,7 +293,7 @@ const FundmeCard = (props: FundmeCardProps) => {
               colorScheme={"secondaryScheme"}
               onClick={allowToken}
             >
-              Approve(BETA)
+              Approve (BETA)
             </Button>
           ) : (
             <>
@@ -305,7 +302,7 @@ const FundmeCard = (props: FundmeCardProps) => {
                 style={{ color: "white" }}
                 value={amount}
                 onChange={(e) => {
-                  setAmount(e.target.value);
+                  setAmount(parseInt(e.target.value));
                 }}
                 disabled={loading}
               />

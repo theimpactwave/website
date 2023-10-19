@@ -180,34 +180,39 @@ const HomePage = () => {
         </Container>
         <Box mb={12} />
         <Hairline />
-        <Box mb={12} textAlign={"center"}>
-          <Heading as={"h3"} fontSize={[24, 28, 32]} mb={4}>
-            Meet some of our positive impact makers:
-          </Heading>
-          <Text>
-            Your investments drive real change. See where your money goes and
-            the difference it makes.
-          </Text>
-        </Box>
-        <Initiatives />
-        <Box mb={12} />
-        <Hairline />
-        {inBeta && (
+        {!inBeta ? (
           <>
-            <Heading as={"h3"} fontSize={[24, 28, 32]} mb={4}>
-              Fund some of our Initiatives directly (BETA)
-            </Heading>
-            <Alert status={"info"}>
-              <AlertIcon />
-              <AlertTitle>
-                NOTE!: This is a BETA test with MetaMask to test the transaction
-                flow to our receivers
-              </AlertTitle>
-            </Alert>
-            <Box mb={12} />
-            <Fundme />
+            <Box mb={12} textAlign={"center"}>
+              <Heading as={"h3"} fontSize={[24, 28, 32]} mb={4}>
+                Meet some of our positive impact makers:
+              </Heading>
+              <Text>
+                Your investments drive real change. See where your money goes
+                and the difference it makes.
+              </Text>
+            </Box>
+            <Initiatives />
             <Box mb={12} />
             <Hairline />
+          </>
+        ) : (
+          <>
+            <Box mb={12} textAlign={"center"}>
+              <Heading as={"h3"} fontSize={[24, 28, 32]} mb={4}>
+                Fund some of our Initiatives directly (BETA)
+              </Heading>
+              <Alert status={"info"}>
+                <AlertIcon />
+                <AlertTitle>
+                  NOTE!: This is a BETA test with MetaMask to test the
+                  transaction flow to our receivers
+                </AlertTitle>
+              </Alert>
+              <Box mb={12} />
+              <Fundme />
+              <Box mb={12} />
+              <Hairline />
+            </Box>
           </>
         )}
         <Box mb={4} textAlign={"center"} width={"100%"}>

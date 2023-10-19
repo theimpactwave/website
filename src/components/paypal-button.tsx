@@ -1,23 +1,15 @@
+"use client";
+
 import { Box } from "@chakra-ui/react";
+import Script from "next/script";
 import { useEffect, useState } from "react";
 
 const PaypalButton = () => {
-  const [html, setHtml] = useState<string>("");
+  const [html, setHtml] = useState<boolean>(false);
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      setHtml(`
-    <script>
-    PayPal.Donation.Button({
-env:'production',
-hosted_button_id:'ZT8QZRJQU7R34',
-image: {
-src:'https://www.paypalobjects.com/en_US/DK/i/btn/btn_donateCC_LG.gif',
-alt:'Donate with PayPal button',
-title:'PayPal - The safer, easier way to pay online!',
-}
-}).render('#donate-button');
-</script>`);
+    if (typeof window !== "undefined" && "PayPal" in window) {
+      setHtml(true);
     }
   }, []);
 
@@ -25,7 +17,25 @@ title:'PayPal - The safer, easier way to pay online!',
     <>
       <Box>
         <div id="donate-button-container">
-          <div id="donate-button" dangerouslySetInnerHTML={{ __html: html }} />
+          <div id="donate-button" />
+          {html && (
+            <Script id="paypal-button-code" strategy="afterInteractive">
+              {`
+            window.PayPal.Donation.Button({
+              env: 'production',
+              hosted_button_id:'ZT8QZRJQU7R34',
+              image: {
+              src:'https://www.paypalobjects.com/en_US/DK/i/btn/btn_donateCC_LG.gif',
+              alt:'Donate with PayPal button',
+              title:'PayPal - The safer, easier way to pay online!',
+              onComplete: function (params) {
+                 console.log("completed")
+              },
+            }
+            }).render('#donate-button');
+        `}
+            </Script>
+          )}
         </div>
       </Box>
     </>

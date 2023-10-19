@@ -1,5 +1,7 @@
 "use client";
 
+import { Binance, Celo, CeloAlfajoresTestnet } from "@thirdweb-dev/chains";
+import { ThirdwebProvider } from "@thirdweb-dev/react";
 import Script from "next/script";
 
 import { Providers } from "@/components/providers";
@@ -56,7 +58,15 @@ export default function RootLayout({
         <Fonts />
       </head>
       <body>
-        <Providers>{children}</Providers>
+        <Providers>
+          {" "}
+          <ThirdwebProvider
+            activeChain={CeloAlfajoresTestnet}
+            supportedChains={[Celo, Binance]}
+          >
+            {children}{" "}
+          </ThirdwebProvider>
+        </Providers>
       </body>
     </html>
   );

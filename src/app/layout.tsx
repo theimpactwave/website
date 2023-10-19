@@ -66,8 +66,8 @@ export default function RootLayout({
         <Providers>
           {" "}
           <ThirdwebProvider
-            activeChain={CeloAlfajoresTestnet}
-            supportedChains={[Celo, Binance]}
+            activeChain={Celo}
+            supportedChains={[Celo]}
           >
             {children}{" "}
           </ThirdwebProvider>

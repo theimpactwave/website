@@ -1,5 +1,6 @@
 import ComponentHeader from "@/components/header";
 import Hero from "@/components/hero";
+
 const Header = () => {
   return (
     <>

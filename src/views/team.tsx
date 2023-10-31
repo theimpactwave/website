@@ -33,7 +33,7 @@ const TeamView = () => {
             }
           />
           <TeamCard
-            link={"https://www.linkedin.com/in/abhib3012/"}
+            link={"https://www.linkedin.com/in/setcookie/"}
             image={"/images/team/frank.jpg"}
             name={"Frank Mueller"}
             content={
@@ -41,7 +41,7 @@ const TeamView = () => {
             }
           />
           <TeamCard
-            link={"https://www.linkedin.com/in/abhib3012/"}
+            link={"https://www.linkedin.com/in/liviazi/"}
             image={"/images/team/livia.jpg"}
             name={"Livia Zimerman"}
             content={
@@ -49,7 +49,7 @@ const TeamView = () => {
             }
           />
           <TeamCard
-            link={"https://www.linkedin.com/in/abhib3012/"}
+            link={"https://www.linkedin.com/in/bjorn-rosendahl/"}
             image={"/images/team/bjorn.jpg"}
             name={"Bjorn Rosendahl"}
             content={

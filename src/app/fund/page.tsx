@@ -1,21 +1,21 @@
 import type { Metadata } from "next";
 
 import DefaultLayout from "@/layouts/default";
-import HomeView from "@/views/home";
+import FundView from "@/views/fund";
 
 export const metadata: Metadata = {
-  title: "Welcome to The Impact Wave",
+  title: "The Impact Wave - Cookie policy",
   description: "The Impact Wave - Unleash Your Generosity, Amplify Your Impact",
 };
 
-const Home = () => {
+const Cookies = () => {
   return (
     <>
       <DefaultLayout>
-        <HomeView />
+        <FundView />
       </DefaultLayout>
     </>
   );
 };
 
-export default Home;
+export default Cookies;

@@ -32,7 +32,8 @@ import Fundme from "@/modules/home/fundme";
 import Initiatives from "@/modules/home/initiatives";
 import Meetus from "@/modules/home/meetus";
 import HomeTeaser from "@/modules/home/teaser";
-const HomePage = () => {
+
+const HomeView = () => {
   const { isOpen, onClose, onOpen } = useDisclosure();
   const mixerModal = useDisclosure();
   const [inBeta, setInBeta] = useState<boolean>(false);
@@ -338,4 +339,4 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+export default HomeView;

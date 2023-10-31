@@ -1,10 +1,24 @@
+"use client";
+
 import { Box, type BoxProps, Stack } from "@chakra-ui/react";
+import { useEffect, useState } from "react";
 
 import Logo from "@/components/logo";
 import WaitlistButton from "@/components/waitlist/button";
 
 const Header = (props: BoxProps) => {
   const { children } = props;
+
+  const [, setInBeta] = useState<boolean>(false);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      if (/\/?#beta/gi.test(window.location.href)) {
+        setInBeta(true);
+      }
+    }
+  }, [setInBeta]);
+
   return (
     <Box
       as={"header"}
@@ -23,12 +37,12 @@ const Header = (props: BoxProps) => {
         <Box>
           <Logo />
         </Box>
-        <Box>
+        <Stack spacing={2}>
           <WaitlistButton
             colorScheme={"tertiaryScheme"}
             size={["xs", "sm", "md"]}
           />
-        </Box>
+        </Stack>
       </Stack>
       {children}
     </Box>

@@ -1,5 +1,7 @@
 "use client";
 
+import { Celo } from "@thirdweb-dev/chains";
+import { ThirdwebProvider } from "@thirdweb-dev/react";
 import Script from "next/script";
 
 import { Providers } from "@/components/providers";
@@ -31,6 +33,11 @@ export default function RootLayout({
           gtag('config', 'G-26CF3WVPNS');
         `}
       </Script>
+      <Script
+        id="paypal-donate"
+        src="https://www.paypalobjects.com/donate/sdk/donate-sdk.js"
+        strategy="afterInteractive"
+      />
       <head>
         <link
           rel="apple-touch-icon"
@@ -56,7 +63,12 @@ export default function RootLayout({
         <Fonts />
       </head>
       <body>
-        <Providers>{children}</Providers>
+        <Providers>
+          {" "}
+          <ThirdwebProvider activeChain={Celo} supportedChains={[Celo]}>
+            {children}{" "}
+          </ThirdwebProvider>
+        </Providers>
       </body>
     </html>
   );

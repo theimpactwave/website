@@ -95,10 +95,8 @@ const InputStyles = InputHelpers.defineMultiStyleConfig({
 });
 
 const ButtonStyles = defineStyleConfig({
-  baseStyle: {
-  },
-  variants: {
-  },
+  baseStyle: {},
+  variants: {},
 });
 
 const theme = {
@@ -182,7 +180,7 @@ const theme = {
     Card: CardStyles,
     Modal: ModalStyles,
     Input: InputStyles,
-    Button: ButtonStyles
+    Button: ButtonStyles,
   },
 };
 

@@ -5,7 +5,7 @@ import ThankyouView from "@/views/thankyou";
 
 export const metadata: Metadata = {
   title: "The Impact Wave - Thank you",
-  description: "The Impact Wave - Unleash Your Generosity, Amplify Your Impact",
+  description: "The Impact Wave -The value chain for the positive impact age",
 };
 
 const Thankyou = () => {

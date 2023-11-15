@@ -5,7 +5,7 @@ import HomeView from "@/views/home";
 
 export const metadata: Metadata = {
   title: "Welcome to The Impact Wave",
-  description: "The Impact Wave - Unleash Your Generosity, Amplify Your Impact",
+  description: "The Impact Wave -The value chain for the positive impact age",
 };
 
 const Home = () => {

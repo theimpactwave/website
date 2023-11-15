@@ -168,7 +168,7 @@ const HomeView = () => {
       />
       <Container>
         <Box mb={12} />
-        <SubHeading center>Book us</SubHeading>
+        <SubHeading center>Book a meeting</SubHeading>
         <Heading as={"h1"} textAlign={"center"}>
           Partners and Investors
         </Heading>

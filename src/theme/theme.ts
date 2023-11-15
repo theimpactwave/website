@@ -94,6 +94,13 @@ const InputStyles = InputHelpers.defineMultiStyleConfig({
   },
 });
 
+const ButtonStyles = defineStyleConfig({
+  baseStyle: {
+  },
+  variants: {
+  },
+});
+
 const theme = {
   initialColorMode: "dark",
   useSystemColorMode: false,
@@ -175,6 +182,7 @@ const theme = {
     Card: CardStyles,
     Modal: ModalStyles,
     Input: InputStyles,
+    Button: ButtonStyles
   },
 };
 

@@ -1,5 +1,7 @@
-import type { TextProps } from "@chakra-ui/react";
+import type { ResponsiveValue, TextProps } from "@chakra-ui/react";
 import { Text } from "@chakra-ui/react";
+import { mapResponsive } from "@chakra-ui/utils";
+import { useMemo } from "react";
 
 export interface SubHeadingProps
   extends Omit<
@@ -7,7 +9,7 @@ export interface SubHeadingProps
     "fontFamily" | "fontWeight" | "textTransform" | "letterSpacing" | "color"
   > {
   color?: "primary" | "secondary" | "tertiary" | "quaternary";
-  center?: boolean;
+  center?: boolean | ResponsiveValue<boolean>;
 }
 
 const SubHeading = (props: SubHeadingProps) => {
@@ -19,6 +21,17 @@ const SubHeading = (props: SubHeadingProps) => {
     color = "tertiary",
     ...rest
   } = props;
+
+  const getTextAlign = useMemo((): any => {
+    if (Array.isArray(center)) {
+      return mapResponsive(center, (value: boolean) => {
+        return value ? "center" : "initial";
+      });
+    } else {
+      return center ? "center" : undefined;
+    }
+  }, [center]);
+
   return (
     <Text
       as={as}
@@ -27,7 +40,7 @@ const SubHeading = (props: SubHeadingProps) => {
       textTransform={"uppercase"}
       letterSpacing={5}
       color={color}
-      textAlign={center ? "center" : undefined}
+      textAlign={getTextAlign}
       mb={mb}
       {...rest}
     >

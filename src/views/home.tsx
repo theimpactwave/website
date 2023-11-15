@@ -47,7 +47,7 @@ const HomeView = () => {
           alignItems={"center"}
         >
           <Box flex={1}>
-            <SubHeading>For projects</SubHeading>
+            <SubHeading center={[true, false]}>For projects</SubHeading>
             <NumberList
               items={[
                 { caption: "Unlocking new investor potential" },
@@ -88,7 +88,7 @@ const HomeView = () => {
             />
           </Box>
           <Box flex={1} order={[1, 2]}>
-            <SubHeading>For investors</SubHeading>
+            <SubHeading center={[true, false]}>For investors</SubHeading>
             <NumberList
               items={[
                 { caption: "Access to positive impact investments" },

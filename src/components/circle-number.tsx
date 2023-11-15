@@ -18,7 +18,9 @@ const CircleNumber = (props: CircleNumberProps) => {
           justifyContent: "center",
           alignItems: "center",
           border: "3px solid",
-          color: "secondary",
+          color: "white",
+          borderColor: "transparent",
+          backgroundColor: "tertiary",
         }}
       >
         <Text fontWeight={900}>{number}</Text>

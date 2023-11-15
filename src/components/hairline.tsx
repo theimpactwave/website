@@ -13,11 +13,13 @@ const Hairline = (props: HairlineProps) => {
       <Box
         sx={{
           width: "100%",
+          maxW: 320,
           height: "1px",
-          border: "1px solid",
+          border: ".5px solid",
           borderColor: reverse
             ? "rgba(255, 255, 255, .25)"
-            : "rgba(0, 0, 0, .05)",
+            : "rgba(0, 0, 0, .2)",
+          mx: "auto",
           mb: 8,
         }}
         {...rest}

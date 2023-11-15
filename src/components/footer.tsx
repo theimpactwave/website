@@ -20,7 +20,7 @@ const Footer = (props: BoxProps) => {
           justifyContent={"space-between"}
           alignItems={"center"}
           p={4}
-          bg={"silver"}
+          bg={"quaternary"}
           color={"black"}
         >
           <Box fontSize={14}>
@@ -29,7 +29,7 @@ const Footer = (props: BoxProps) => {
           <Box>
             <Link
               href={"mailto:team@theimpactwave.org"}
-              fontSize={[14, 16, 16]}
+              fontSize={[13, 14, 14]}
             >
               team@theimpactwave.org
             </Link>

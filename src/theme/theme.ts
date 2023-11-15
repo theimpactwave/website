@@ -21,8 +21,9 @@ const LinkStyles = defineStyleConfig({
 
 const HeadingStyles = defineStyleConfig({
   baseStyle: {
-    fontWeight: 700,
+    fontWeight: 500,
     letterSpacing: -0.6,
+    mb: 16,
   },
 });
 
@@ -33,19 +34,19 @@ const CardStyles = CardHelpers.defineMultiStyleConfig({
       px: 2,
       py: 2,
       bg: "none",
-      borderRadius: 40,
+      borderRadius: 20,
     },
   },
   variants: {
     solid: () => ({
       container: {
-        bg: "brand",
+        bg: "tertiary",
       },
     }),
     outline: () => ({
       container: {
         color: "#00000",
-        borderColor: "brand",
+        borderColor: "tertiary",
       },
     }),
   },

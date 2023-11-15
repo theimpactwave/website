@@ -1,7 +1,9 @@
 import type { CardProps } from "@chakra-ui/react";
-import { Box, Card, CardBody, Heading, Text } from "@chakra-ui/react";
+import { Box, Card, CardBody, Text } from "@chakra-ui/react";
 import type { StaticImport } from "next/dist/shared/lib/get-img-props";
 import Image from "next/image";
+
+import SubHeading from "@/components/sub-heading";
 
 export interface TeaserCardProps extends CardProps {
   icon: StaticImport;
@@ -22,18 +24,12 @@ const TeaserCard = (props: TeaserCardProps) => {
             width={"100%"}
             mb={4}
           >
-            <Image src={icon} alt={""} width={50} height={50} />
+            <Image src={icon} alt={""} width={100} height={100} />
           </Box>
-          <Heading
-            as={"h2"}
-            fontSize={[24, 26, 28]}
-            mb={4}
-            fontWeight={500}
-            textAlign={"center"}
-          >
-            {header}
-          </Heading>
-          <Text>{content}</Text>
+          <SubHeading center>{header}</SubHeading>
+          <Text textAlign={"center"} fontWeight={500}>
+            {content}
+          </Text>
         </CardBody>
       </Card>
     </>

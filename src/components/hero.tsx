@@ -1,16 +1,25 @@
-import { Box, Heading } from "@chakra-ui/react";
+"use client";
+
+import { Box, Heading, useBreakpoint } from "@chakra-ui/react";
 import Image from "next/image";
+import { useMemo } from "react";
 
 import AllInOne from "@/assets/all-in-one.svg";
 import WaitlistButton from "@/components/waitlist/button";
 
 const Hero = () => {
+  const bp = useBreakpoint();
+
+  const getImage = useMemo((): string => {
+    return bp === "base" ? "/images/hero-mobile.jpg" : "/images/hero.jpg";
+  }, [bp]);
+
   return (
     <>
       <Box
         sx={{
           position: "relative",
-          height: [380, 480, 600, 700, 900],
+          height: [398, 480, 600, 700, 900],
           "& img": {},
         }}
         mb={16}
@@ -33,9 +42,9 @@ const Hero = () => {
                 top: ["13%", "10%", "23%", "32%", "45%"],
                 left: ["0", "3%", "2%", "2%", "1%"],
                 maxW: [480, 420, 475, 490, 550],
-                bg: ["rgba(0,0,0,.66)", "rgba(0,0,0,.55)", "rgba(0,0,0,.4)"],
+                bg: ["rgba(0,0,0,.75)", "rgba(0,0,0,.55)", "rgba(0,0,0,.4)"],
                 p: 8,
-                borderRadius: 10,
+                borderRadius: [0, 10, 10],
               }}
             >
               <Box
@@ -59,7 +68,7 @@ const Hero = () => {
                 textAlign={["center", "initial"]}
                 color={"white"}
                 sx={{
-                  mb: 8,
+                  mb: [6, 8],
                 }}
               >
                 The value chain for the positive impact age
@@ -69,7 +78,7 @@ const Hero = () => {
           </Box>
         </Box>
         <Image
-          src={"/images/hero.jpg"}
+          src={getImage}
           alt={""}
           layout={"fill"}
           objectFit={"cover"}

@@ -7,7 +7,7 @@ import WaitlistButton from "@/components/waitlist/button";
 
 export const metadata: Metadata = {
   title: "The Impact Wave - Public Presentation",
-  description: "The Impact Wave - Unleash Your Generosity, Amplify Your Impact",
+  description: "The Impact Wave -The value chain for the positive impact age",
 };
 
 const PresentationPublic = () => {

@@ -1,59 +1,118 @@
-import type { CardProps } from "@chakra-ui/react";
+import type { CardProps, LinkBoxProps } from "@chakra-ui/react";
 import {
   Box,
+  Button,
   Card,
   CardBody,
   Heading,
   LinkBox,
   LinkOverlay,
+  Stack,
   Text,
 } from "@chakra-ui/react";
 import Image from "next/image";
+import NextLink from "next/link";
 import type { ReactElement, ReactNode } from "react";
 
 export interface MeetusCardProps extends Omit<CardProps, "content"> {
   link: string;
+  linkCaption?: string;
   image: string;
   date: string;
   header: string;
-  content: string | ReactElement | ReactNode;
+  content?: string | ReactElement | ReactNode;
+  linkBoxProps?: LinkBoxProps;
+  current?: boolean;
+  reduced?: boolean;
 }
 
 const MeetusCard = (props: MeetusCardProps) => {
-  const { link, header, content, image, date, ...rest } = props;
+  const {
+    link,
+    linkCaption = undefined,
+    header,
+    content = undefined,
+    image,
+    date,
+    linkBoxProps = undefined,
+    current = false,
+    reduced = false,
+    ...rest
+  } = props;
   return (
-    <LinkBox height={"100%"}>
-      <Card variant={"outline"} height={"100%"} {...rest}>
+    <LinkBox height={"100%"} {...linkBoxProps}>
+      <Card
+        variant={"outline"}
+        height={"100%"}
+        bg={current ? "rgba(255, 255, 255, .3)" : undefined}
+        border={current ? "2px solid" : "1px solid"}
+        borderColor={current ? "primary" : "tertiary"}
+        {...rest}
+      >
         <CardBody>
           <LinkOverlay href={link}>
-            <Box
-              display={"flex"}
-              justifyContent={"center"}
-              alignItems={"center"}
-              width={"100%"}
-              mb={4}
-              sx={{
-                "& img": {
-                  borderRadius: "50%",
-                },
-              }}
+            <Stack
+              direction={"row"}
+              justifyContent={"space-between"}
+              alignItems={"flex-start"}
+              spacing={4}
             >
-              <Image src={image} alt={""} width={100} height={100} />
-            </Box>
-            <Heading
-              as={"h2"}
-              fontSize={[24, 26, 28]}
-              mb={4}
-              fontWeight={500}
-              textAlign={"center"}
-            >
-              {header}
-            </Heading>
-            <Text color={"brand"} fontWeight={700} mb={4}>
-              {date}
-            </Text>
-            {content}
+              <Box
+                flex={current ? "0 0 100px" : "0 0 50px"}
+                display={"flex"}
+                justifyContent={"center"}
+                alignItems={"center"}
+                width={"100%"}
+                sx={{
+                  "& img": {
+                    borderRadius: "50%",
+                  },
+                }}
+              >
+                <Image
+                  src={image}
+                  alt={""}
+                  width={current ? 100 : 50}
+                  height={current ? 100 : 50}
+                />
+              </Box>
+              <Box flex={1}>
+                <Heading
+                  as={"h2"}
+                  fontSize={reduced ? 18 : [18, 20, 22]}
+                  mb={1}
+                  fontWeight={current ? 700 : 500}
+                >
+                  {header}
+                </Heading>
+                <Text
+                  color={"brand"}
+                  fontSize={reduced ? 16 : undefined}
+                  fontWeight={700}
+                >
+                  {date}
+                </Text>
+              </Box>
+            </Stack>
+            {content && (
+              <Box mt={4} sx={{ "& > *": { fontSize: [16, 16, 14] } }}>
+                {content}
+              </Box>
+            )}
           </LinkOverlay>
+          {current && (
+            <NextLink href={link} title={header}>
+              <Button
+                mt={8}
+                width={"100%"}
+                variant={"solid"}
+                colorScheme={"brandScheme"}
+                minW={140}
+              >
+                {linkCaption ?? "Link to event"}
+              </Button>
+            </NextLink>
+          )}
         </CardBody>
       </Card>
     </LinkBox>

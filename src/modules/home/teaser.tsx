@@ -1,8 +1,8 @@
 import { Stack } from "@chakra-ui/react";
 
-import TeaserIcon1 from "@/assets/teaser-icon1.svg";
-import TeaserIcon2 from "@/assets/teaser-icon2.svg";
-import TeaserIcon3 from "@/assets/teaser-icon3.svg";
+import TeaserIcon3 from "@/assets/marketplace-icon.svg";
+import TeaserIcon1 from "@/assets/protocol-icon.svg";
+import TeaserIcon2 from "@/assets/software-icon.svg";
 import TeaserCard from "@/components/cards/teaser-card";
 
 const HomeTeaser = () => {
@@ -16,26 +16,26 @@ const HomeTeaser = () => {
       >
         <TeaserCard
           width={["100%", "100%", "33.33%"]}
-          icon={TeaserIcon3}
-          header={"Easy Giving, Big Impact"}
+          icon={TeaserIcon1}
+          header={"Protocol"}
           content={
-            "Easily fund the causes you care about. Setting up automated fundings takes just a few clicks"
+            "A new standard and protocol in impact creation, evaluation and measurement uniquely crafted to the needs and reality of local change-makers across the globe."
           }
         />
         <TeaserCard
           width={["100%", "100%", "33.33%"]}
           icon={TeaserIcon2}
-          header={"Transparency Matters"}
+          header={"Software"}
           content={
-            "Track your funding and see the impact you've created. We believe in complete transparency, giving you the confidence that your contributions are making a difference"
+            "A mobile and offline-capable application suite designed to efficiently manage, plan, execute, and evaluate domain-agnostic impact projects."
           }
         />
         <TeaserCard
           width={["100%", "100%", "33.33%"]}
-          icon={TeaserIcon1}
-          header={"Multiply Your Impact"}
+          icon={TeaserIcon3}
+          header={"Marketplace"}
           content={
-            "Invest in your vision and those of like-minded individuals. Your funding, combined with others, create a powerful wave of change."
+            "An innovative platform and marketplace for investments and funding for positive impact claims generated and blended seamlessly through our advanced protocol and software."
           }
         />
       </Stack>

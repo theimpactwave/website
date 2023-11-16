@@ -5,7 +5,7 @@ import TermsView from "@/views/terms";
 
 export const metadata: Metadata = {
   title: "The Impact Wave - Terms of use",
-  description: "The Impact Wave - Unleash Your Generosity, Amplify Your Impact",
+  description: "The Impact Wave -The value chain for the positive impact age",
 };
 
 const Terms = () => {

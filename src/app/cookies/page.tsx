@@ -5,7 +5,7 @@ import CookiesView from "@/views/cookies";
 
 export const metadata: Metadata = {
   title: "The Impact Wave - Cookie policy",
-  description: "The Impact Wave - Unleash Your Generosity, Amplify Your Impact",
+  description: "The Impact Wave -The value chain for the positive impact age",
 };
 
 const Cookies = () => {

@@ -39,7 +39,7 @@ const Innovation = () => {
               color={"primary"}
               mb={8}
             >
-              We introduce a new standard and asset classes
+              We introduce new standards and asset classes
             </Heading>
             <Image
               src={"/images/innovation1.jpg"}
@@ -93,7 +93,7 @@ const Innovation = () => {
               color={"primary"}
               mb={8}
             >
-              We establish new methods and standards of evaluation
+              We establish new methods and protocols for evaluation
             </Heading>
             <Image
               src={"/images/innovation4.png"}

@@ -19,7 +19,7 @@ const HomeTeaser = () => {
           icon={TeaserIcon1}
           header={"Protocol"}
           content={
-            "A new standard and protocol in impact creation, evaluation and measurement uniquely crafted to the needs and reality of local change-making across the globe."
+            "A new standard and protocol in impact creation, evaluation and measurement uniquely crafted to the needs and reality of local change-makers across the globe."
           }
         />
         <TeaserCard

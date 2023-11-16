@@ -23,7 +23,8 @@ const HomeView = () => {
       <Container>
         <SubHeading center>Our Mission</SubHeading>
         <Heading as={"h1"} textAlign={"center"}>
-          We close the existing gaps in the impact economy&apos;s value chain.
+          We close the existing gaps in the positive impact economy&apos;s value
+          chain.
         </Heading>
         <Hairline />
         <Box mb={12} />
@@ -50,8 +51,8 @@ const HomeView = () => {
             <SubHeading center={[true, false]}>For projects</SubHeading>
             <NumberList
               items={[
-                { caption: "Unlocking new investor potential" },
-                { caption: "A new protocol for investment" },
+                { caption: "Unlocking new and untapped investor potential" },
+                { caption: "A new protocol for evaluation and certification" },
                 { caption: "The first application suite for impact makers" },
               ]}
             />
@@ -96,13 +97,13 @@ const HomeView = () => {
                   caption:
                     "Transparency and credibility through standardization",
                 },
-                { caption: "Fractional ownership of assets" },
+                { caption: "Fractional ownership of impact assets" },
               ]}
             />
           </Box>
         </Stack>
         <Box mb={24} />
-        <SubHeading center>New Standards</SubHeading>
+        <SubHeading center>The innovation</SubHeading>
         <Heading as={"h1"} textAlign={"center"}>
           Digital inclusion for impact makers - Trust and transparency for
           investors.
@@ -168,15 +169,15 @@ const HomeView = () => {
       />
       <Container>
         <Box mb={12} />
-        <SubHeading center>Book a meeting</SubHeading>
+        <SubHeading center>Get involved</SubHeading>
         <Heading as={"h1"} textAlign={"center"}>
-          Partners and Investors
+          For future partners and investors
         </Heading>
         <Hairline />
         <Box mb={12} />
         <Container center>
           <Text mb={8} fontWeight={700}>
-            Book a meeting with us:
+            Schedule a meeting with us:
           </Text>
           <Calendly />
         </Container>

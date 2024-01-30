@@ -1,7 +1,5 @@
 "use client";
 
-import { Celo } from "@thirdweb-dev/chains";
-import { ThirdwebProvider } from "@thirdweb-dev/react";
 import Script from "next/script";
 
 import { Providers } from "@/components/providers";
@@ -63,12 +61,7 @@ export default function RootLayout({
         <Fonts />
       </head>
       <body>
-        <Providers>
-          {" "}
-          <ThirdwebProvider activeChain={Celo} supportedChains={[Celo]}>
-            {children}{" "}
-          </ThirdwebProvider>
-        </Providers>
+        <Providers>{children}</Providers>
       </body>
     </html>
   );

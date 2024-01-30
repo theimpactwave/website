@@ -23,8 +23,7 @@ const HomeView = () => {
       <Container>
         <SubHeading center>Our Mission</SubHeading>
         <Heading as={"h1"} textAlign={"center"}>
-          We close the existing gaps in the positive impact economy&apos;s value
-          chain.
+          We close the existing gaps and bring impact investing to the masses.
         </Heading>
         <Hairline />
         <Box mb={12} />
@@ -37,6 +36,21 @@ const HomeView = () => {
         <Heading as={"h1"} textAlign={"center"}>
           Creating blended and certified positive impact projects ready for
           investment.
+        </Heading>
+        <Heading
+          as={"h3"}
+          textAlign={"center"}
+          sx={{
+            "&, & > *": {
+              fontSize: ["24px !important", "30px !important"],
+            },
+          }}
+        >
+          The{" "}
+          <Text as={"span"} color={"#71706e"}>
+            „silver standard”
+          </Text>{" "}
+          for impact projects
         </Heading>
         <Box mb={12} />
         <Hairline />
@@ -113,17 +127,7 @@ const HomeView = () => {
       <Box mb={12} />
       <Innovation />
       <Box mb={16} />
-      <Container>
-        <Heading
-          as={"h2"}
-          size={"h4"}
-          fontWeight={700}
-          fontStyle={"italic"}
-          textAlign={"center"}
-        >
-          &bdquo;We set new standards for positive impact creation.&rdquo;
-        </Heading>
-      </Container>
+
       <WaitlistBar />
       <Box mb={16} />
       <Container>

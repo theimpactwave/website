@@ -31,6 +31,7 @@ const TeamCard = (props: TeamCardProps) => {
   const Avatar = () => {
     return (
       <Box
+        as={"span"}
         display={"flex"}
         justifyContent={"center"}
         alignItems={"center"}

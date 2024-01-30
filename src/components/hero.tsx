@@ -19,7 +19,7 @@ const Hero = () => {
       <Box
         sx={{
           position: "relative",
-          height: [398, 480, 600, 700, 900],
+          height: [398, 480, 520, 600, 640],
           "& img": {},
         }}
         mb={16}
@@ -39,7 +39,7 @@ const Hero = () => {
                 display: ["flex", "block !important"],
                 flexDirection: "column",
                 alignItems: "center",
-                top: ["13%", "10%", "23%", "32%", "45%"],
+                top: ["14%", "23%", "15%", "22%", "22%"],
                 left: ["0", "3%", "2%", "2%", "1%"],
                 maxW: [480, 420, 475, 490, 550],
                 bg: ["rgba(0,0,0,.75)", "rgba(0,0,0,.55)", "rgba(0,0,0,.4)"],
@@ -63,8 +63,7 @@ const Hero = () => {
               <Heading
                 as={"h1"}
                 fontSize={["23", "30", "42", "44", "50"]}
-                fontWeight={[600, 600, 700]}
-                textTransform={"uppercase"}
+                fontWeight={[600, 600, 900]}
                 textAlign={["center", "initial"]}
                 color={"white"}
                 sx={{

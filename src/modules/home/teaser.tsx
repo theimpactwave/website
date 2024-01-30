@@ -27,7 +27,7 @@ const HomeTeaser = () => {
           icon={TeaserIcon2}
           header={"Software"}
           content={
-            "A mobile and offline-capable application suite designed to efficiently manage, plan, execute, and evaluate domain-agnostic impact projects."
+            "Software solutions designed to efficiently plan, manage, execute, monitor and evaluate domain-agnostic impact projects from start to end."
           }
         />
         <TeaserCard

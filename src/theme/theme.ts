@@ -21,8 +21,9 @@ const LinkStyles = defineStyleConfig({
 
 const HeadingStyles = defineStyleConfig({
   baseStyle: {
-    fontWeight: 500,
-    letterSpacing: -0.6,
+    fontWeight: 900,
+    letterSpacing: -0.01,
+    lineHeight: 1.1,
     mb: 16,
   },
 });
@@ -116,7 +117,7 @@ const theme = {
     }),
   },
   fonts: {
-    heading: `'Montserrat', sans-serif`,
+    heading: `'Inter', sans-serif`,
     body: `'Sora', sans-serif`,
   },
   colors: {

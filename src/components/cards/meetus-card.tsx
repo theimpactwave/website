@@ -52,12 +52,14 @@ const MeetusCard = (props: MeetusCardProps) => {
         <CardBody>
           <LinkOverlay href={link}>
             <Stack
+              as={"span"}
               direction={"row"}
               justifyContent={"space-between"}
               alignItems={"flex-start"}
               spacing={4}
             >
               <Box
+                as={"span"}
                 flex={current ? "0 0 100px" : "0 0 50px"}
                 display={"flex"}
                 justifyContent={"center"}
@@ -76,7 +78,7 @@ const MeetusCard = (props: MeetusCardProps) => {
                   height={current ? 100 : 50}
                 />
               </Box>
-              <Box flex={1}>
+              <Box as={"span"} flex={1}>
                 <Heading
                   as={"h2"}
                   fontSize={reduced ? 18 : [18, 20, 22]}
@@ -86,6 +88,7 @@ const MeetusCard = (props: MeetusCardProps) => {
                   {header}
                 </Heading>
                 <Text
+                  as={"span"}
                   color={"brand"}
                   fontSize={reduced ? 16 : undefined}
                   fontWeight={700}
@@ -95,7 +98,11 @@ const MeetusCard = (props: MeetusCardProps) => {
               </Box>
             </Stack>
             {content && (
-              <Box mt={4} sx={{ "& > *": { fontSize: [16, 16, 14] } }}>
+              <Box
+                as={"span"}
+                mt={4}
+                sx={{ "& > *": { fontSize: [16, 16, 14] } }}
+              >
                 {content}
               </Box>
             )}
@@ -103,6 +110,7 @@ const MeetusCard = (props: MeetusCardProps) => {
           {current && (
             <NextLink href={link} title={header}>
               <Button
+                as={"span"}
                 mt={8}
                 width={"100%"}
                 variant={"solid"}

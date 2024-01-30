@@ -50,7 +50,7 @@ const Calendly = (props: CalendlyProps): JSX.Element => {
           <ModalHeader pt={10}>Book a meeting with us:</ModalHeader>
           <ModalCloseButton />
           <ModalBody mb={10}>
-            <InlineWidget url="https://calendly.com/theimpactwave" />
+            <InlineWidget url="https://calendly.com/set-dqi/the-impact-wave" />
           </ModalBody>
         </ModalContent>
       </Modal>

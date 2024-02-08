@@ -41,14 +41,6 @@ const TeamView = () => {
             }
           />
           <TeamCard
-            link={"https://www.linkedin.com/in/liviazi/"}
-            image={"/images/team/livia.jpg"}
-            name={"Livia Zimerman"}
-            content={
-              "Consumer traction wizard on a sustainable mission for 20 years. Digital strategist for billion-dollar brands. Serial entrepreneur."
-            }
-          />
-          <TeamCard
             link={"https://www.linkedin.com/in/bjorn-rosendahl/"}
             image={"/images/team/bjorn.jpg"}
             name={"Bjorn Rosendahl"}

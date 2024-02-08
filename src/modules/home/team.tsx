@@ -5,7 +5,7 @@ import TeamCard from "@/components/cards/team-card";
 const Team = () => {
   return (
     <>
-      <SimpleGrid columns={[1, 2, 4, 4]} spacing={8}>
+      <SimpleGrid columns={[1, 2, 3]} spacing={8}>
         <TeamCard
           minimal
           link={"/team"}
@@ -17,12 +17,6 @@ const Team = () => {
           link={"/team"}
           image={"/images/team/frank.jpg"}
           name={"Frank Mueller"}
-        />
-        <TeamCard
-          minimal
-          link={"/team"}
-          image={"/images/team/livia.jpg"}
-          name={"Livia Zimerman"}
         />
         <TeamCard
           minimal
